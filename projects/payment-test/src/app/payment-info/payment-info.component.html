@@ -1,0 +1,154 @@
+<!-- swap -->
+<div class="swap-box" [ngStyle]="{display:hidden?'none':'flex'}">
+    <div class="box-cont">
+        <div class="left">
+            <div class="box-top">{{"Payment amount" | translate}}</div>
+            <div class="box-top-mobile">{{"Amount" | translate}}</div>
+            <input type="number" class="num" [ngModel]="amt" (ngModelChange)="amtChanged($event)" (focus)="amt=''">
+        </div>
+        <div class="right">
+            <div class="balance">
+                <div class="text">
+                    {{"Balance"|translate}}:{{boot.balances[left].toFormat(4, 1)}}
+                </div>
+                <div class="balance-bottom">
+                    <div class="bottom-box blue"
+                         *ngIf="(boot.balances[left].comparedTo(0)>0)&&isApproveEnabled() && !isOtherCurrency"
+                         (click)="approve()">
+                        {{"Approve" | translate}}
+                    </div>
+                </div>
+            </div>
+            <div class="line">
+                <div class="l"></div>
+            </div>
+            <div class="coin" (click)="openCoinLeftDlg()">
+                <div class="img">
+                    <img src="assets/static/img/coins/{{boot.poolId}}-c{{left}}.png" alt="">
+                </div>
+                <div class="name">{{boot.coins[left].symbol}}</div>
+            </div>
+            <div class="triangle">
+                <img src="assets/static/img/triangle.png" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="slidingpPoint" >
+        <p *ngIf="!isOtherCurrency">Fee：0.3%</p>
+    </div>
+    <div class="to">
+        <input type="text" class="addressInput" [ngModel]="address" (ngModelChange)="editAddress($event)"
+               [placeholder]="'Please enter the receiver address' | translate">
+        <svg t="1618828949866" class="icon scan" viewBox="0 0 1024 1024" version="1.1"
+             xmlns="http://www.w3.org/2000/svg" p-id="2176" width="200" height="200">
+            <path
+                    d="M889.792 354.944a30.272 30.272 0 0 1-30.272-30.272v-131.2a20.16 20.16 0 0 0-20.16-20.16h-131.2a30.272 30.272 0 1 1 0-60.576h131.2a80.736 80.736 0 0 1 80.736 80.736v131.2a30.272 30.272 0 0 1-30.304 30.272z m-565.12-181.664h-131.2a20.16 20.16 0 0 0-20.16 20.16v131.2a30.272 30.272 0 1 1-60.576 0v-131.2a80.736 80.736 0 0 1 80.736-80.704h131.2a30.272 30.272 0 0 1 0 60.544zM889.792 659.2a30.272 30.272 0 0 0-30.272 30.272v131.2a20.16 20.16 0 0 1-20.16 20.16h-131.2a30.272 30.272 0 1 0 0 60.576h131.2a80.736 80.736 0 0 0 80.736-80.736v-131.2a30.272 30.272 0 0 0-30.304-30.272z m-565.12 181.664h-131.2a20.16 20.16 0 0 1-20.16-20.192v-131.2a30.272 30.272 0 1 0-60.576 0v131.2a80.736 80.736 0 0 0 80.736 80.736h131.2a30.272 30.272 0 1 0 0-60.544z"
+                    fill="#9E9EA1" p-id="2177"></path>
+            <path
+                    d="M264.096 486.144h504.608c20.16 0 30.272 10.08 30.272 30.272 0 20.16-10.08 30.272-30.272 30.272H264.096c-20.16 0-30.272-10.112-30.272-30.272 0-20.192 10.112-30.272 30.272-30.272z"
+                    fill="#16A16A" p-id="2178"></path>
+        </svg>
+    </div>
+    <div class="slidingpPoint" >
+        <p>{{"Estimated Receipt Amount" | translate}}：{{receiptAmt}}</p>
+        <p *ngIf="!isOtherCurrency">{{"Estimated Gas Fee"| translate}}：{{gasFee}}</p>
+    </div>
+    <div class="toBottom" [ngClass]="{toBottomActive:isOtherCurrency}" (click)="otherCurrency()">
+        <span>
+            {{"Payment in other currencies" | translate}}
+            <span class="tips-box">
+                <svg (mouseover)="tipsShow = true" (mouseout)="tipsShow = false" t="1618829219616" class="icon gantan"
+                     viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2302" width="200"
+                     height="200">
+                    <path
+                            d="M512 63.104c-243.872 0-441.6 197.728-441.6 441.6s197.728 441.6 441.6 441.6 441.6-197.728 441.6-441.6-197.728-441.6-441.6-441.6z m0 808.32c-202.464 0-366.72-164.256-366.72-366.72 0-202.464 164.256-366.72 366.72-366.72 202.464 0 366.72 164.256 366.72 366.72 0 202.464-164.256 366.72-366.72 366.72z"
+                            fill="#FFFFFF" p-id="2303"></path>
+                    <path
+                            d="M464.672 678.208a47.328 47.328 0 1 0 94.656 0 47.328 47.328 0 0 0-94.656 0zM488.32 567.808h47.36c4.32 0 7.872-3.552 7.872-7.904V291.776a7.904 7.904 0 0 0-7.904-7.872h-47.296a7.904 7.904 0 0 0-7.904 7.872v268.16c0 4.32 3.552 7.872 7.904 7.872z"
+                            fill="#FFFFFF" p-id="2304"></path>
+                </svg>
+                <span *ngIf="tipsShow"
+                      class="tips">{{"To select another currency for payment is to convert other currencies into the currency to be paid" |translate}}</span>
+            </span>
+        </span>
+        <span *ngIf="isOtherCurrency"><svg t="1618828897481" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                                           xmlns="http://www.w3.org/2000/svg" p-id="2050" width="200" height="200">
+                <path
+                        d="M512 64C264.608 64 64 264.608 64 512s200.608 448 448 448 448-200.608 448-448S759.392 64 512 64z"
+                        fill="#16A16A" p-id="2051"></path>
+                <path
+                        d="M699.008 353.024h-46.912a31.84 31.84 0 0 0-25.92 13.28l-157.184 218.016-71.2-98.816a32 32 0 0 0-25.92-13.28h-46.88a8 8 0 0 0-6.496 12.704l124.608 172.8a31.808 31.808 0 0 0 51.712 0l210.56-292a7.968 7.968 0 0 0-6.4-12.704z"
+                        fill="#FFFFFF" p-id="2052"></path>
+            </svg></span>
+        <span *ngIf="!isOtherCurrency"><svg t="1618828856181" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                                            xmlns="http://www.w3.org/2000/svg" p-id="1925" width="200" height="200">
+                <path
+                        d="M512 64c247.392 0 448 200.608 448 448s-200.608 448-448 448S64 759.392 64 512 264.608 64 512 64z m187.008 289.024h-46.912a31.84 31.84 0 0 0-25.92 13.28l-157.184 218.016-71.2-98.816a32 32 0 0 0-25.92-13.28h-46.88a8 8 0 0 0-6.496 12.704l124.608 172.8a31.808 31.808 0 0 0 51.712 0l210.56-292a7.968 7.968 0 0 0-6.4-12.704z"
+                        fill="#505059" p-id="1926"></path>
+            </svg></span>
+    </div>
+    <ng-container *ngIf="isOtherCurrency">
+        <div class="box-cont">
+            <div class="left">
+                <div class="box-top">{{"Need to pay" | translate}}</div>
+                <div class="box-top-mobile">{{"Amount" | translate}}</div>
+                <input type="number" class="num" name="minAmt" [ngModel]="rightAmt"
+                       (ngModelChange)="amtChangedRight($event)">
+            </div>
+            <div class="right">
+                <div class="balance">
+                    <div class="text">
+                        {{"Balance"|translate}}:{{boot.balances[right].toFormat(4, 1)}}
+                    </div>
+                    <div class="balance-bottom">
+                        <div class="bottom-box blue"
+                             *ngIf="(boot.balances[right].comparedTo(0)>0)&&isApproveEnabledRight()"
+                             (click)="approveRight()">{{"Approve" | translate}}
+                        </div>
+                    </div>
+                </div>
+                <div class="line">
+                    <div class="l"></div>
+                </div>
+                <div class="coin" (click)="openCoinRightDlg()">
+                    <div class="img">
+                        <img src="assets/static/img/coins/{{boot.poolId}}-c{{right}}.png" alt="">
+                    </div>
+                    <div class="name">{{boot.coins[right].symbol}}</div>
+                </div>
+                <div class="triangle">
+                    <img src="assets/static/img/triangle.png" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="slidingpPoint">
+            <!-- <p>{{"Estimated Receipt Amount" | translate}}:&nbsp;{{receiptAmt}}</p> -->
+            <p>{{"Estimated Gas Fee"| translate}}:&nbsp;{{gasFee}}</p>
+            <!--            <p>{{"Slippage Setting" | translate}}</p>-->
+            <!--            <div class="SlidingNum">-->
+            <!--                <div *ngFor="let item of slippageNumList;let i=index;"-->
+            <!--                     [ngClass]="{'activeS':active === item.num}"-->
+            <!--                     (click)="selectNumFn(item.num)">{{item.num}}%-->
+            <!--                </div>-->
+            <!--            </div>-->
+
+        </div>
+    </ng-container>
+
+    <div [ngClass]="{'btn-disabled':!isExchangeEnabledRight()&&!isExchangeEnabled(),'btn':isExchangeEnabledRight()||isExchangeEnabled()}"
+         *ngIf="boot.accounts.length>0 ;else noBtn" (click)="pay()">
+        {{!insufficientLiquidity ? "Pay" : "Insufficient Liquidity"|translate}}
+    </div>
+    <ng-template #noBtn>
+        <div class="btn btn-disabled">
+            {{"Connect to a Wallet"|translate}}
+        </div>
+    </ng-template>
+
+    <!--    <div class="btn" *ngIf="boot.accounts.length==0" (click)="connectWallet()">-->
+    <!--        {{"Connect to a Wallet"|translate}}-->
+    <!--    </div>-->
+</div>
+<app-coins-dlg #coinsDlgLeft (coinSelected)="onLeftCoinSelected($event)"></app-coins-dlg>
+<app-coins-dlg #coinsDlgRight (coinSelected)="onRightCoinSelected($event)"></app-coins-dlg>
+<app-dialog-tip (hiddenDialog)="hiddenDialog($event)" *ngIf="!showDialog" [titleError]="titleError"></app-dialog-tip>

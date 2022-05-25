@@ -1,0 +1,47 @@
+<div class="GetPaidToPay-box">
+    <div class="GetPaidToPay-box-top">
+        <div class="top-text1">{{"Get paid to pay" | translate}}</div>
+        <div class="top-text2">{{"Earn KST on every payment" | translate}}</div>
+        <img src="assets/static/img/pay-b.png" alt="">
+    </div>
+    <div class="myContainer">
+        <div class="GetPaidToPay-box-bottom">
+            <div class="bottom-text1">
+                <div class="top-1">
+                    <span class="Reward">{{"Pending Rewards" | translate}}</span>
+                    <span class="num-money">{{boot.bstPending.toFormat(4, 1)}}</span>
+                    <span class="bottom-name">KST</span>
+                </div>
+                <div class="top-1">
+                    <span class="balance-top-box">{{"Balance" | translate}}: {{boot.bstBalance.toFormat(4, 1)}}
+                        KST</span>
+                </div>
+            </div>
+            <div class="bottom-text2" style="cursor: pointer;" *ngIf="boot.bstPending.comparedTo(0)>0"
+                (click)="claim()">
+                <div>
+                    {{"Claim" | translate}}
+                </div>
+            </div>
+            <div class="bottom-text2" style="cursor: pointer;" *ngIf="boot.bstPending.comparedTo(0)<=0">
+                <div>
+                    {{"Claim" | translate}}
+                </div>
+            </div>
+        </div>
+        <div class="tip">
+            <svg _ngcontent-bje-c104="" t="1618829219616" viewBox="0 0 1024 1024" version="1.1"
+                xmlns="http://www.w3.org/2000/svg" p-id="2302" width="200" height="200" class="icon gantan">
+                <path _ngcontent-bje-c104=""
+                    d="M512 63.104c-243.872 0-441.6 197.728-441.6 441.6s197.728 441.6 441.6 441.6 441.6-197.728 441.6-441.6-197.728-441.6-441.6-441.6z m0 808.32c-202.464 0-366.72-164.256-366.72-366.72 0-202.464 164.256-366.72 366.72-366.72 202.464 0 366.72 164.256 366.72 366.72 0 202.464-164.256 366.72-366.72 366.72z"
+                    fill="#A8D2C2" p-id="2303"></path>
+                <path _ngcontent-bje-c104=""
+                    d="M464.672 678.208a47.328 47.328 0 1 0 94.656 0 47.328 47.328 0 0 0-94.656 0zM488.32 567.808h47.36c4.32 0 7.872-3.552 7.872-7.904V291.776a7.904 7.904 0 0 0-7.904-7.872h-47.296a7.904 7.904 0 0 0-7.904 7.872v268.16c0 4.32 3.552 7.872 7.904 7.872z"
+                    fill="#A8D2C2" p-id="2304"></path>
+            </svg>
+            <span>
+                {{"payment_claim_tip"|translate}}
+            </span>
+        </div>
+    </div>
+</div>

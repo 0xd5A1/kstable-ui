@@ -1,0 +1,16 @@
+<div class="dialog-2" [ngStyle]="{display:hidden?'none':''}" (click)="close()">
+    <div class="center backdrop-filter" [ngStyle]="{opacity:hidden?0:1}">
+        <div class="title">{{"Install a Wallet"|translate}}</div>
+        <ul>
+            <app-wallet-item  [walletName]="'MetaMask'" [isMobile]="isMobile" [index]="0" (onMouseEnter)="onItemMouseEnter($event)"
+                (onMouseLeave)="onItemMouseLeave($event)" [walletImg]="'assets/static/img/wallet/metamask.png'" (onClick)="installMetaMask()"></app-wallet-item>
+            <app-wallet-item [walletName]="'Binance'" [isMobile]="isMobile" [index]="1" (onMouseEnter)="onItemMouseEnter($event)"
+                (onMouseLeave)="onItemMouseLeave($event)" [walletImg]="'assets/static/img/wallet/binanceWLT.jpg'" (onClick)="installBinance()"></app-wallet-item>
+            <app-wallet-item [walletName]="'Walletconnect'" [isMobile]="isMobile" [index]="2" (onMouseEnter)="onItemMouseEnter($event)"
+                (onMouseLeave)="onItemMouseLeave($event)" [walletImg]="'assets/static/img/wallet/walletconnect.png'" (onClick)="connectWC()"></app-wallet-item>
+            <div class="checked" [ngStyle]="{top:(70*selectedIndex)+'px',display:isMobile?'none':''}">
+            </div>
+        </ul>
+
+    </div>
+</div>

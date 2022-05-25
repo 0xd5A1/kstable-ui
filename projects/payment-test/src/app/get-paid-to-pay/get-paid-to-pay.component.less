@@ -1,0 +1,238 @@
+.GetPaidToPay-box {
+    width: 526px;
+    height: 244px;
+    background: rgba(29, 30, 37, 0.57);
+    border-radius: 21px;
+    margin: 39px auto 20px auto;
+
+    .GetPaidToPay-box-top {
+        padding: 13px 27px;
+        box-sizing: border-box;
+        position: relative;
+        height: 85px;
+
+        .top-text1 {
+            font-size: 20px;
+            color: #FFFFFF;
+        }
+
+        .top-text2 {
+            font-size: 14px;
+            font-weight: 300;
+            color: #929292;
+        }
+
+        img {
+            width: 108px;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+
+            &:hover {
+                animation: mymove 1s infinite alternate linear;
+            }
+        }
+
+
+    }
+
+    @keyframes mymove {
+        0% {
+            bottom: -3px;
+        }
+
+        50% {
+            bottom: 0;
+        }
+
+        100% {
+            bottom: 3px;
+        }
+    }
+
+    .myContainer {
+        // width: 526px;
+        // height: 140px;
+        border-radius: 21px;
+        border: 1px solid #204037;
+
+        .tip {
+            padding: 20px;
+            // width: 100%;
+            // height: 38px;
+            font-size: 12px;
+            font-family: Poppins-Light, Poppins;
+            font-weight: 300;
+            color: #67AC92;
+            line-height: 19px;
+
+            svg {
+                width: 12px;
+                height: 12px;
+                position: relative;
+                top: 2px;
+            }
+        }
+
+        .GetPaidToPay-box-bottom {
+            height: 77px;
+            background: linear-gradient(270deg, #3BBF8B 0%, #005433 100%);
+            background-image: url('../../assets/static/img/pay-b-btn.png');
+            background-size: 100% 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 30px 0 28px;
+            margin-top: -2;
+
+            .bottom-text1 {
+                box-sizing: border-box;
+
+                .top-1 {
+                    .Reward {
+                        font-size: 14px;
+                        font-weight: normal;
+                        color: #A8D2C2;
+                        margin-right: 10px;
+                    }
+
+                    .num-money {
+                        font-size: 21px;
+                        font-weight: 500;
+                        color: #FFFFFF;
+                        margin-right: 3px;
+                    }
+
+                    .bottom-name {
+                        font-size: 14px;
+                        font-weight: 400;
+                        color: #FFFFFF;
+                    }
+
+                    .balance-top-box {
+                        font-size: 11px;
+                        font-weight: 500;
+                        color: #A8D2C2;
+                    }
+                }
+            }
+
+            .bottom-text2 {
+                width: 110px;
+                height: 34px;
+                line-height: 34px;
+                background: linear-gradient(180deg, #E1FFEE 0%, #8DE9BF 49%, #57A37A 100%);
+                border-radius: 12px;
+                border: 1px solid #00C55A;
+                text-align: center;
+                font-size: 14px;
+                font-weight: 600;
+                color: #195C43;
+                cursor: pointer;
+            }
+        }
+    }
+
+}
+
+//手机
+@media (max-width: 768px) {
+    .GetPaidToPay-box {
+        width: 316px;
+        height: 286px;
+        border-radius: 10px;
+        margin: 20px auto 10px auto;
+
+        .GetPaidToPay-box-top {
+            padding: 13px 24px;
+
+            .top-text1 {
+                font-size: 16px;
+            }
+
+            .top-text2 {
+                font-size: 13px;
+            }
+
+            img {
+                width: 85px;
+                bottom: 20px;
+
+                &:hover {
+                    animation: mymoveM 2s infinite alternate linear;
+                }
+            }
+        }
+
+        @keyframes mymoveM {
+            0% {
+                bottom: 25px;
+            }
+
+            50% {
+                bottom: 20px;
+            }
+
+            100% {
+                bottom: 25px;
+            }
+        }
+
+        .myContainer {
+            border-radius: 21px;
+            border: 1px solid #204037;
+
+            .tip {
+                padding: 20px;
+                // height: 38px;
+                font-size: 12px;
+                font-family: Poppins-Light, Poppins;
+                font-weight: 300;
+                color: #67AC92;
+                line-height: 19px;
+
+                svg {
+                    width: 12px;
+                    height: 12px;
+                    position: relative;
+                    top: 2px;
+                }
+            }
+
+            .GetPaidToPay-box-bottom {
+                padding: 0 11px 0 24px;
+
+                .bottom-text1 {
+
+                    .top-1 {
+                        .Reward {
+                            font-size: 13px;
+                            margin-right: 6px;
+                        }
+
+                        .num-money {
+                            font-size: 18px;
+                        }
+
+                        .bottom-name {
+                            font-size: 13px;
+                        }
+
+                        .balance-top-box {
+                            font-size: 11px;
+                        }
+                    }
+                }
+
+                .bottom-text2 {
+                    width: 80px;
+                    height: 25px;
+                    line-height: 25px;
+                    border-radius: 6px;
+                    font-size: 13px;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}

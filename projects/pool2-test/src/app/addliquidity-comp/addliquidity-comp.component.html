@@ -1,0 +1,36 @@
+<!-- add -->
+<div class="add-box" [ngStyle]="{display:hidden?'none':'flex'}">
+    <div class="box-cont" *ngFor="let coin of boot.coins;let i=index;">
+        <div class="left">
+            <div class="box-top">{{"Balance"|translate}}: {{boot.balance.coinsBalance[i].toFormat(4, 1)}}</div>
+            <!-- <div class="num">0</div> -->
+            <input type="number" class="num" name="{{coin.symbol}}Amt" [ngModel]="amts[i]"
+                   (ngModelChange)="amtChange(i,$event)">
+        </div>
+        <div class="right">
+            <div class="approve">
+                <div class="text" [ngClass]="{blue:isApproveEnabled(i)&&loadStatus!==1}"
+                     *ngIf="(boot.balance.coinsBalance[i].comparedTo(0)>0)&&isApproveEnabled(i)&&loadStatus!==1"
+                     (click)="approve(i)">
+                    {{"Approve" | translate}}
+                </div>
+            </div>
+            <div class="line">
+                <div class="line-cont"></div>
+            </div>
+            <div class="coin">
+                <div class="img">
+                    <img src="assets/static/img/coins/{{boot.poolId}}-c{{i}}.png" alt="">
+                </div>
+                <div class="name">{{coin.symbol}}</div>
+            </div>
+        </div>
+    </div>
+    <div [ngClass]="{btn:isAddLiquidityBtnEnabled()&&loadStatus!==1,'btn-disabled':!isAddLiquidityBtnEnabled()||loadStatus===1}"
+         *ngIf="boot.accounts.length>0" (click)="addLiquidity()">
+        {{'Add Liquidity'|translate}}
+    </div>
+    <div class="btn" *ngIf="boot.accounts.length==0" (click)="connectWallet()">
+        {{'Connect to a Wallet'|translate}}
+    </div>
+</div>

@@ -1,0 +1,156 @@
+li {
+    cursor: pointer;
+    height: 40px;
+    border-radius: 5px;
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    z-index: 9999;
+    position: relative;
+    color: #6B6C70;
+
+    .left {
+        display: flex;
+        justify-content: flex-start;
+
+        .selected {
+            opacity: 0;
+            padding: 15px 0;
+            padding-left: 12.5px;
+            padding-right: 7px;
+
+            img {
+                width: 10px;
+                height: 10px;
+            }
+        }
+
+        .icon {
+            padding: 9px 0;
+            opacity: 0.8;
+            transition: 0.5s;
+
+            img {
+                width: 22px;
+            }
+        }
+
+        .name {
+            margin-left: 10px;
+            height: 40px;
+            transition: 0.5s;
+            line-height: 40px;
+        }
+    }
+
+    .right {
+        transition: 0.5;
+        height: 40px;
+        margin-right: 12.5px;
+        line-height: 40px;
+        font-size: 8px;
+        font-family: Poppins-Medium, Poppins;
+    }
+
+
+
+    &.active {
+
+        .name,
+        .right {
+            color: #fff;
+        }
+
+        .icon {
+            opacity: 1;
+        }
+
+        .selected {
+            opacity: 1 !important;
+        }
+
+
+    }
+
+    &.bg {
+        background-color: rgba(0, 0, 0, 0.37);
+    }
+}
+
+li:hover {
+
+    .name,
+    .right {
+        transition: 0.5s;
+        color: #fff;
+    }
+
+    .icon {
+        transition: 0.5s;
+        opacity: 1;
+    }
+}
+
+@media (min-width: 768px) {
+    li {
+        cursor: pointer;
+        height: 60px;
+        border-radius: 5px;
+        margin: 10px 0;
+        display: flex;
+        justify-content: space-between;
+
+        .left {
+            display: flex;
+            justify-content: flex-start;
+
+            .selected {
+                opacity: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding-left: 18px;
+                padding-right: 7px;
+
+                img {
+                    width: 16px;
+                    height: 16px;
+                }
+            }
+
+            .icon {
+                padding: 10px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                img {
+                    width: 32px;
+                    height: 32px;
+                }
+            }
+
+            .name {
+                margin-left: 10px;
+                height: 60px;
+                line-height: 60px;
+                font-size: 16px;
+            }
+        }
+
+        .right {
+            height: 60px;
+            margin-right: 25px;
+            line-height: 60px;
+            font-size: 12px;
+        }
+
+        &.active {
+            background-color: none;
+
+            .selected {
+                opacity: 1 !important;
+            }
+        }
+    }
+}

@@ -1,0 +1,1233 @@
+@font-face {
+  font-family: DIN-BoldItalicAlt;
+  src: url('DIN-BoldItalicAlt.otf');
+}
+body,
+html,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-family: Poppins-Medium, Poppins;
+}
+html,
+body {
+  width: 100%;
+  height: auto;
+  overflow-x: hidden;
+}
+img {
+  vertical-align: top;
+  border: none;
+}
+.backdrop-filter {
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+.blue {
+  background-color: #398CFF !important;
+  border: none !important;
+  transition: 0.5s;
+}
+.animation .person {
+  animation: person 0.8s alternate ease-out;
+  animation-fill-mode: forwards;
+}
+.animation .plant {
+  animation: plant 1s alternate ease-out;
+  animation-fill-mode: forwards;
+}
+.animation .Kxian {
+  animation: kxian 1s alternate ease-out;
+  animation-fill-mode: forwards;
+}
+.animation .swap {
+  animation: swap 1s alternate ease-out;
+  animation-fill-mode: forwards;
+}
+.animation .bar {
+  animation: bar 1s alternate ease-out;
+  animation-fill-mode: forwards;
+}
+.animation .plane {
+  animation: line 1.25s alternate ease-out;
+  animation-fill-mode: forwards;
+}
+.animation .line {
+  animation: line 1.25s alternate ease-out;
+  animation-fill-mode: forwards;
+}
+.animation .btc {
+  animation: btc 1s alternate ease-out;
+  animation-fill-mode: forwards;
+}
+.animation2 .person {
+  animation: person2 0.8s alternate ease-out;
+  animation-fill-mode: forwards;
+}
+.animation2 .plant {
+  animation: plant2 1s alternate ease-out;
+  animation-fill-mode: forwards;
+}
+.animation2 .Kxian {
+  animation: kxian2 1s alternate ease-out;
+  animation-fill-mode: forwards;
+}
+.animation2 .swap {
+  animation: swap2 1s alternate ease-out;
+  animation-fill-mode: forwards;
+}
+.animation2 .bar {
+  animation: bar2 1s alternate ease-out;
+  animation-fill-mode: forwards;
+}
+.animation2 .plane {
+  animation: line2 1s alternate ease-out;
+  animation-fill-mode: forwards;
+}
+.animation2 .line {
+  animation: line2 1s alternate ease-out;
+  animation-fill-mode: forwards;
+}
+.animation2 .btc {
+  animation: btc2 1s alternate ease-out;
+  animation-fill-mode: forwards;
+}
+@keyframes person {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-10px, -10px);
+  }
+}
+@keyframes swap {
+  25% {
+    transform: scale(1.5, 1.5) translate(0, 0);
+  }
+  100% {
+    transform: translate(-10px, -10px);
+  }
+}
+@keyframes kxian {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(20px, -10px);
+  }
+  75% {
+    transform: translate(25px, -15px);
+  }
+}
+@keyframes bar {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(20px, -20px);
+  }
+  75% {
+    transform: translate(25px, -25px);
+  }
+}
+@keyframes btc {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-10px, -30px);
+  }
+  75% {
+    transform: translate(-15px, -35px);
+  }
+}
+@keyframes line {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-10px, -20px);
+  }
+  75% {
+    transform: translate(-15px, -25px);
+  }
+}
+@keyframes plant {
+  0% {
+    transform: translate(0, 0);
+  }
+  75% {
+    transform: translate(15px, -25px);
+  }
+  100% {
+    transform: translate(10px, -20px);
+  }
+}
+@keyframes person2 {
+  0% {
+    transform: translate(-10px, -10px);
+  }
+  25% {
+    transform: translate(-15px, -15px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+@keyframes swap2 {
+  25% {
+    transform: scale(1.5, 1.5) translate(0, 0);
+  }
+  100% {
+    transform: translate(-10px, -10px);
+  }
+}
+@keyframes kxian2 {
+  0% {
+    transform: translate(20px, -10px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(25px, -15px);
+  }
+}
+@keyframes bar2 {
+  0% {
+    transform: translate(20px, -20px);
+  }
+  25% {
+    transform: translate(25px, -25px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+@keyframes btc2 {
+  0% {
+    transform: translate(-10px, -30px);
+  }
+  25% {
+    transform: translate(-15px, -35px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+@keyframes line2 {
+  0% {
+    transform: translate(-10px, -20px);
+  }
+  25% {
+    transform: translate(-15px, -25px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+@keyframes plant2 {
+  0% {
+    transform: translate(10px, -20px);
+  }
+  25% {
+    transform: translate(15px, -25px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+@font-face {
+  font-family: DIN-BlackItalicAlt;
+  src: url('DIN-BlackItalicAlt.otf');
+}
+::-webkit-scrollbar {
+  width: 0 !important;
+}
+/* 超小屏幕（手机，小于 768px） */
+.top {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 60px;
+  background: #1E212D;
+  z-index: 9999;
+  overflow: hidden;
+  transition: 0.5s;
+}
+.top .nav {
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+}
+.top .nav .img {
+  cursor: pointer;
+  margin-left: 26.5px;
+  margin-top: 20px;
+}
+.top .nav .img img {
+  height: 22.5px;
+}
+.top .nav .menu {
+  width: 34px;
+  height: 21.5px;
+  margin-top: 20.5px;
+  margin-right: 25px;
+  border-radius: 20px;
+  text-align: center;
+  background-color: rgba(126, 132, 153, 0.2);
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.top .nav .menu .line {
+  width: 60%;
+  height: 60%;
+}
+.top .nav .menu .x {
+  display: none;
+  width: 80%;
+  height: 80%;
+}
+.top .list {
+  height: 1030px;
+  margin-top: 0px;
+  padding: 15px 26.5px;
+}
+.top .list ul li {
+  font-family: DIN-BoldItalicAlt, DIN;
+  position: relative;
+  height: 35px;
+  line-height: 35px;
+}
+.top .list ul li .title {
+  position: relative;
+  color: #6B7595;
+  font-size: 15px;
+  transition: 0.5s;
+  z-index: 2;
+}
+.top .list ul li .title.hover {
+  color: #fff;
+  font-size: 20px;
+}
+.top .list ul li .shadow {
+  display: block;
+  position: absolute;
+  top: 0;
+  color: #6B7595;
+  font-size: 15px;
+  transition: 0.5s;
+  z-index: 1;
+}
+.top .list ul li .shadow.hover {
+  top: 10px;
+  color: rgba(255, 255, 255, 0.08);
+  font-size: 28px;
+}
+.open {
+  height: 432px !important;
+  background: rgba(0, 0, 0, 0.2) !important;
+  transition: 0.5s;
+}
+.exchange {
+  height: 432px;
+  background: #1E212D;
+  position: relative;
+}
+.exchange .cont {
+  width: 375px;
+  margin: 0 auto;
+  position: relative;
+}
+.exchange .cont .title {
+  height: 70px;
+  margin: 0 25px 30px;
+  padding-top: 63px;
+  font-size: 24px;
+  font-family: DIN-BlackItalicAlt, DIN;
+  font-weight: normal;
+  color: #fff;
+  line-height: 35px;
+  white-space: nowrap;
+}
+.exchange .cont .title span {
+  color: #0EC47C;
+}
+.exchange .cont .btn {
+  position: relative;
+  margin-top: 0px;
+  margin-left: 27px;
+  width: 100px;
+  height: 20px;
+  border-radius: 10px;
+  border: 1px solid #fff;
+  text-align: center;
+  z-index: 1000;
+  display: flex;
+  justify-content: flex-start;
+}
+.exchange .cont .btn .text {
+  width: 90%;
+  height: 20px;
+  line-height: 20px;
+  text-align: center;
+  font-size: 8px;
+  color: #FFFFFF;
+}
+.exchange .cont .btn .icon {
+  position: absolute;
+  left: 78px;
+  display: flex;
+  align-items: center;
+  height: 20px;
+}
+.exchange .cont .btn .icon img {
+  width: 10px;
+  height: 12px;
+}
+.exchange .cont .bgc-box {
+  position: relative;
+  top: -60px;
+  height: 300px;
+  width: 100%;
+  overflow: hidden !important;
+}
+.exchange .cont .bgc-box .bgc {
+  position: absolute;
+  left: 97px;
+  top: 51px;
+  width: 240px;
+  height: 147px;
+  z-index: 1;
+}
+.exchange .cont .bgc-box .floor {
+  position: absolute;
+  left: 19px;
+  top: 197px;
+  width: 356px;
+  height: 29px;
+  z-index: 1;
+}
+.exchange .cont .bgc-box .person {
+  position: absolute;
+  left: 178px;
+  top: 84px;
+  width: 160px;
+  height: 120px;
+  z-index: 10;
+}
+.exchange .cont .bgc-box .plant {
+  position: absolute;
+  left: 301px;
+  top: 155px;
+  width: 37px;
+  height: 50px;
+  z-index: 11;
+}
+.exchange .cont .bgc-box .laptop {
+  position: absolute;
+  left: 97px;
+  top: 124px;
+  width: 50px;
+  height: 75px;
+  z-index: 20;
+}
+.exchange .cont .bgc-box .Kxian {
+  position: absolute;
+  left: 116px;
+  top: 112px;
+  width: 24px;
+  height: 23px;
+  z-index: 18;
+}
+.exchange .cont .bgc-box .swap {
+  position: absolute;
+  left: 103px;
+  top: 98px;
+  width: 24px;
+  height: 23px;
+  z-index: 19;
+}
+.exchange .cont .bgc-box .bar {
+  position: absolute;
+  left: 123px;
+  top: 92px;
+  width: 18px;
+  height: 18px;
+  z-index: 20;
+}
+.exchange .cont .bgc-box .plane {
+  position: absolute;
+  left: 143px;
+  top: 117px;
+  width: 22px;
+  height: 20px;
+  z-index: 30;
+}
+.exchange .cont .bgc-box .line {
+  position: absolute;
+  left: 162px;
+  top: 81px;
+  width: 186px;
+  height: 77px;
+  z-index: 2;
+}
+.exchange .cont .bgc-box .btc {
+  position: absolute;
+  left: 311px;
+  top: 63px;
+  width: 22px;
+  height: 22px;
+  z-index: 2;
+}
+.exchange .item {
+  width: 90%;
+  margin: 0 5%;
+  position: absolute;
+  bottom: 28px;
+}
+.exchange .item ul {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+}
+.exchange .item ul li {
+  display: flex;
+}
+.exchange .item ul li img {
+  width: 20px;
+  height: 20px;
+}
+.exchange .item ul li .name {
+  color: #fff;
+  font-size: 7px;
+  line-height: 20px;
+  margin-left: 10px;
+}
+.exchange .item ul .left {
+  justify-content: flex-start;
+}
+.exchange .item ul .left img {
+  width: 21px;
+  height: 22px;
+}
+.exchange .item ul .middle {
+  justify-content: center;
+}
+.exchange .item ul .middle img {
+  height: 23px;
+  width: 30px;
+}
+.exchange .item ul .right {
+  justify-content: flex-end;
+}
+.exchange .item ul .right img {
+  width: 21.5px;
+  height: 26px;
+}
+.exchange .item ul .img {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.introduce {
+  position: relative;
+  background: #FAFCFF;
+}
+.introduce .cont {
+  width: 100%;
+}
+.introduce .cont .img {
+  position: relative;
+  width: 345px;
+  height: 0;
+  margin: 0 auto;
+  z-index: 15;
+}
+.introduce .cont .img img {
+  position: absolute;
+  width: 233px;
+  height: 162px;
+  top: 35px;
+  left: 80px;
+  z-index: 10;
+}
+.introduce .cont .right {
+  position: relative;
+  padding-top: 175px;
+  padding-bottom: 50px;
+  width: 345px;
+  margin: 0 auto;
+  z-index: 10;
+}
+.introduce .cont .right .title {
+  position: relative;
+  height: 14px;
+  font-size: 12px;
+  line-height: 14px;
+  font-family: DIN-BlackItalicAlt, DIN;
+  font-weight: normal;
+  margin-bottom: 8px;
+  z-index: 20;
+}
+.introduce .cont .right .text {
+  position: relative;
+  font-size: 8px;
+}
+.introduce .cont .right .text .text-cont {
+  position: relative;
+  color: #1E212D;
+  padding: 12px;
+  box-shadow: 0px 2px 7px 0px #edf4ff;
+  background-color: #fff;
+  z-index: 11;
+}
+.introduce .cont .right .text .bg {
+  position: absolute;
+  bottom: -10px;
+  left: 15px;
+  width: 100%;
+  height: 140%;
+  background: url(../img/bg.png);
+  background-size: 100% 100%;
+  z-index: -1;
+}
+.footer {
+  height: 112.5px;
+  padding: 24px;
+  background-color: #1E212D;
+}
+.footer .cont {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.footer .cont .logo {
+  width: 80px;
+  height: 21px;
+}
+.footer .cont .logo img {
+  width: 100%;
+  height: 100%;
+}
+.footer .cont .text {
+  font-size: 8px;
+  font-family: DINAlternate;
+  color: #9399B3;
+  line-height: 42px;
+  margin-left: 5px;
+}
+.footer .cont .links {
+  height: 22px;
+}
+.footer .cont .links ul {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20% 20%;
+}
+.footer .cont .links ul li {
+  background: #1E212D;
+  transition: 0.2s;
+  display: flex;
+  justify-content: flex-start;
+}
+.footer .cont .links ul li .img {
+  height: 22px;
+  width: 22px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #1E212D;
+}
+.footer .cont .links ul li .img svg {
+  height: 15px;
+  width: 15px;
+}
+.footer .cont .links ul li:hover .img {
+  background: #2B2E3A;
+  border: 1px solid #3C3F4E;
+}
+.footer .cont .links ul li:hover .img svg path {
+  fill: #c0cae9;
+  transition: 0.2s;
+}
+/* 小屏幕（平板，大于等于 768px） */
+@media (min-width: 768px) {
+  .top {
+    height: 80px;
+  }
+  .top .nav .img {
+    margin-left: 53px;
+    margin-top: 20px;
+  }
+  .top .nav .img img {
+    height: 40px;
+  }
+  .top .nav .menu {
+    width: 68px;
+    height: 43px;
+    margin-top: 20px;
+    margin-right: 50px;
+    border-radius: 41.5px;
+  }
+  .top .list {
+    height: auto;
+    max-width: 1200px;
+    margin-top: 50px;
+  }
+  .top .list ul li {
+    height: 50px;
+    line-height: 50px;
+  }
+  .top .list ul li .title {
+    font-size: 20px;
+  }
+  .top .list ul li .title.hover {
+    font-size: 28px;
+  }
+  .top .list ul li .shadow {
+    font-size: 20px;
+  }
+  .top .list ul li .shadow.hover {
+    font-size: 36px;
+  }
+  .open {
+    height: 768px !important;
+    transition: 0.5s;
+  }
+  .exchange {
+    height: 780px;
+    padding-top: 20px;
+  }
+  .exchange .cont {
+    width: 750px;
+    margin: 0 auto;
+  }
+  .exchange .cont .title {
+    height: 120px;
+    padding-top: 80px;
+    font-size: 36px;
+    line-height: 60px;
+  }
+  .exchange .cont .btn {
+    margin-left: 27px;
+    width: 200px;
+    height: 46px;
+    border-radius: 23px;
+  }
+  .exchange .cont .btn .text {
+    height: 46px;
+    line-height: 46px;
+    font-size: 16px;
+  }
+  .exchange .cont .btn .icon {
+    height: 46px;
+    left: 160px;
+  }
+  .exchange .cont .btn .icon img {
+    width: 20px;
+    height: 24px;
+  }
+  .exchange .cont .bgc-box {
+    position: absolute;
+    top: -60px;
+    height: 700px;
+    width: 100%;
+    overflow: hidden !important;
+  }
+  .exchange .cont .bgc-box .bgc {
+    left: 193px;
+    top: 343px;
+    width: 480px;
+    height: 293px;
+  }
+  .exchange .cont .bgc-box .floor {
+    left: 38px;
+    top: 630px;
+    width: 713px;
+    height: 59px;
+  }
+  .exchange .cont .bgc-box .person {
+    left: 356px;
+    top: 410px;
+    width: 287px;
+    height: 237px;
+  }
+  .exchange .cont .bgc-box .plant {
+    left: 602px;
+    top: 551px;
+    width: 73px;
+    height: 98px;
+  }
+  .exchange .cont .bgc-box .laptop {
+    left: 194px;
+    top: 490px;
+    width: 100px;
+    height: 157px;
+  }
+  .exchange .cont .bgc-box .Kxian {
+    left: 233px;
+    top: 466px;
+    width: 47px;
+    height: 45px;
+  }
+  .exchange .cont .bgc-box .swap {
+    left: 206px;
+    top: 437px;
+    width: 46px;
+    height: 45px;
+  }
+  .exchange .cont .bgc-box .bar {
+    left: 246px;
+    top: 425px;
+    width: 36px;
+    height: 34px;
+  }
+  .exchange .cont .bgc-box .plane {
+    left: 285px;
+    top: 476px;
+    width: 43px;
+    height: 38px;
+  }
+  .exchange .cont .bgc-box .line {
+    left: 323px;
+    top: 404px;
+    width: 367px;
+    height: 155px;
+  }
+  .exchange .cont .bgc-box .btc {
+    left: 621px;
+    top: 368px;
+    width: 44px;
+    height: 44px;
+  }
+  .exchange .item {
+    bottom: 60px;
+  }
+  .exchange .item ul {
+    width: 750px;
+    margin: 0 auto;
+  }
+  .exchange .item ul li img {
+    width: 40px;
+    height: 40px;
+  }
+  .exchange .item ul li .name {
+    font-size: 14px;
+    line-height: 40px;
+    margin-left: 40px;
+  }
+  .exchange .item ul .left {
+    justify-content: flex-start;
+  }
+  .exchange .item ul .left img {
+    width: 42px;
+    height: 44px;
+  }
+  .exchange .item ul .middle {
+    justify-content: center;
+  }
+  .exchange .item ul .middle img {
+    height: 46px;
+    width: 59px;
+  }
+  .exchange .item ul .right {
+    justify-content: flex-end;
+  }
+  .exchange .item ul .right img {
+    width: 41px;
+    height: 52px;
+  }
+  .exchange .item ul .img {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .introduce {
+    position: relative;
+    padding: 20px;
+  }
+  .introduce .cont .img {
+    width: 790px;
+  }
+  .introduce .cont .img img {
+    width: 466px;
+    height: 334px;
+    top: 50px;
+    left: 160px;
+  }
+  .introduce .cont .right {
+    padding-top: 350px;
+    padding-bottom: 50px;
+    width: 690px;
+  }
+  .introduce .cont .right .title {
+    height: 30px;
+    font-size: 24px;
+    line-height: 30px;
+    margin-bottom: 16px;
+  }
+  .introduce .cont .right .text {
+    font-size: 16px;
+    padding: 20px;
+  }
+  .introduce .cont .right .text .bg {
+    left: 15px;
+    width: 100%;
+    height: 125%;
+  }
+  .footer {
+    height: 112.5px;
+    padding: 24px;
+    background-color: #1E212D;
+  }
+  .footer .cont {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+  .footer .cont .logo {
+    width: 80px;
+    height: 21px;
+  }
+  .footer .cont .logo img {
+    width: 100%;
+    height: 100%;
+  }
+  .footer .cont .text {
+    font-size: 8px;
+    font-family: DINAlternate-Bold, DINAlternate;
+    font-weight: bold;
+    color: #9399B3;
+    line-height: 42px;
+    margin-left: 5px;
+  }
+  .footer .cont .links {
+    width: 577px;
+    height: 44px;
+  }
+  .footer .cont .links ul li {
+    height: 44px;
+    width: 44px;
+    border-radius: 22px;
+  }
+  .footer .cont .links ul li svg {
+    height: 30px;
+    width: 30px;
+  }
+  .footer .cont .links ul li .img {
+    height: 44px;
+    width: 44px;
+    border-radius: 22px;
+  }
+  .footer .cont .links ul li .img svg {
+    height: 30px;
+    width: 30px;
+  }
+}
+/* 中等屏幕（桌面显示器，大于等于 992px） */
+@media (min-width: 992px) {
+  .top {
+    top: 0;
+    height: 80px;
+    transition: 0.5s;
+  }
+  .top .nav {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .top .nav .img {
+    margin-left: 50px;
+    margin-top: 24px;
+  }
+  .top .nav .menu {
+    width: 68px;
+    height: 43px;
+    margin-top: 28px;
+    margin-right: 50px;
+    border-radius: 21.5px;
+    transition: 0.5s;
+  }
+  .top .list {
+    margin-top: 50px;
+  }
+  .top .list ul li {
+    height: 70px;
+    line-height: 70px;
+  }
+  .top .list ul li .title {
+    font-size: 31px;
+  }
+  .top .list ul li .title.hover {
+    font-size: 53px;
+  }
+  .top .list ul li .shadow {
+    font-size: 31px;
+  }
+  .top .list ul li .shadow.hover {
+    top: 20px;
+    font-size: 84px;
+  }
+  .open {
+    height: 800px !important;
+    transition: 0.5s;
+  }
+  .introduce {
+    height: 688px;
+  }
+  .introduce .cont {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+  }
+  .introduce .cont .img {
+    position: relative;
+    width: 466px;
+    margin: 155px auto 0;
+  }
+  .introduce .cont .img img {
+    position: relative;
+    width: 466px;
+    height: 324px;
+    top: 0;
+    left: 0;
+  }
+  .introduce .cont .right {
+    flex: 1;
+    position: relative;
+    padding-top: 155px;
+    max-width: 763px;
+    padding-bottom: 0;
+  }
+  .introduce .cont .right .bg {
+    bottom: -35px;
+    width: 100%;
+    height: 120%;
+    z-index: -1;
+  }
+  .introduce .cont .right .title {
+    height: 33px;
+    font-size: 27px;
+    line-height: 33px;
+    margin-bottom: 18.5px;
+  }
+  .introduce .cont .right .text {
+    font-size: 18px;
+  }
+  .introduce .cont .right .text .text-cont {
+    padding: 25px;
+  }
+  .footer {
+    height: 225px;
+  }
+  .footer .cont {
+    width: 960px;
+    margin: 0 auto;
+    height: 100%;
+    display: block;
+    position: relative;
+  }
+  .footer .cont .logo {
+    position: absolute;
+    left: 0;
+    top: 70px;
+    width: 159px;
+    height: 42px;
+  }
+  .footer .cont .text {
+    position: absolute;
+    top: 96px;
+    left: 0;
+    font-size: 12px;
+    line-height: 83px;
+  }
+  .footer .cont .links {
+    position: absolute;
+    right: 0;
+    top: 77.5px;
+    width: 578px;
+    height: 47px;
+  }
+  .footer .cont .links ul {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    position: relative;
+  }
+  .footer .cont .links ul li {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    position: relative;
+    width: 200px;
+  }
+  .footer .cont .links ul li .img {
+    height: 44px;
+    border-radius: 22px;
+  }
+  .footer .cont .links ul li .img svg {
+    height: 30px;
+    width: 30px;
+  }
+}
+/* 大屏幕（大桌面显示器，大于等于 1200px） */
+@media (min-width: 1200px) {
+  .top {
+    margin-left: 0;
+  }
+  .top .nav .img {
+    margin-left: 0px;
+  }
+  .top .nav .menu {
+    margin-right: 0px;
+  }
+  .open {
+    height: 1030px !important;
+    transition: 0.5s;
+  }
+  .list {
+    width: 1200px;
+    margin: 0 auto;
+    margin-top: 50px;
+  }
+  .exchange {
+    height: 1030px;
+  }
+  .exchange .cont {
+    width: 1200px;
+  }
+  .exchange .cont .title {
+    height: 249px;
+    margin: 0 auto;
+    padding-top: 131px;
+    font-size: 65px;
+    line-height: 83px;
+  }
+  .exchange .cont .btn {
+    margin-top: 10px;
+    margin-left: 0;
+    width: 224px;
+    height: 51px;
+    line-height: 51px;
+    border-radius: 25.5px;
+    transition: 0.5s;
+  }
+  .exchange .cont .btn .text {
+    height: 51px;
+    line-height: 51px;
+    font-size: 16px;
+  }
+  .exchange .cont .btn .icon {
+    line-height: 58px;
+    left: 80%;
+    width: 14px;
+    height: 50px;
+  }
+  .exchange .cont .btn .icon img {
+    width: 14px;
+    height: 20px;
+  }
+  .exchange .cont .bgc-box {
+    height: 1050px;
+    width: 1200px;
+    margin: 0 auto;
+  }
+  .exchange .cont .bgc-box .bgc {
+    left: 403px;
+    top: 295px;
+    width: 728px;
+    height: 445px;
+  }
+  .exchange .cont .bgc-box .floor {
+    left: 168px;
+    top: 729px;
+    width: 1175px;
+    height: 86px;
+  }
+  .exchange .cont .bgc-box .person {
+    left: 653px;
+    top: 396px;
+    width: 435px;
+    height: 357px;
+  }
+  .exchange .cont .bgc-box .plant {
+    left: 1023px;
+    top: 610px;
+    width: 109px;
+    height: 148px;
+  }
+  .exchange .cont .bgc-box .laptop {
+    left: 406px;
+    top: 517px;
+    width: 151px;
+    height: 236px;
+  }
+  .exchange .cont .bgc-box .Kxian {
+    left: 465px;
+    top: 482px;
+    width: 70px;
+    height: 68px;
+  }
+  .exchange .cont .bgc-box .swap {
+    left: 423px;
+    top: 437px;
+    width: 70px;
+    height: 68px;
+  }
+  .exchange .cont .bgc-box .bar {
+    left: 485px;
+    top: 418px;
+    width: 53px;
+    height: 52px;
+  }
+  .exchange .cont .bgc-box .plane {
+    left: 544px;
+    top: 496px;
+    width: 65px;
+    height: 58px;
+  }
+  .exchange .cont .bgc-box .line {
+    left: 600px;
+    top: 387px;
+    width: 555px;
+    height: 234px;
+  }
+  .exchange .cont .bgc-box .btc {
+    left: 1051px;
+    top: 332px;
+    width: 66px;
+    height: 65px;
+  }
+  .exchange .item {
+    width: 100%;
+    margin: 0 auto;
+    bottom: 75px;
+  }
+  .exchange .item ul {
+    width: 1000px;
+    margin: 0 auto;
+  }
+  .exchange .item ul li img {
+    width: 50px;
+    height: 50px;
+  }
+  .exchange .item ul li .name {
+    font-size: 16px;
+    line-height: 50px;
+    margin-left: 20px;
+  }
+  .footer .cont {
+    width: 1200px;
+  }
+}
+/*# sourceMappingURL=./index.css.map */

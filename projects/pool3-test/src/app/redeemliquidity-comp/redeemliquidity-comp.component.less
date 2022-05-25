@@ -1,0 +1,340 @@
+.manage-box {
+    box-sizing: border-box;
+    width: 316px;
+    max-width: 96%;
+    margin: 5px auto;
+    padding: 15px;
+    background-color: rgba(29, 30, 37, 0.57);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-bottom: 10px;
+    height: 300px;
+    display: none;
+    justify-content: space-between;
+    flex-direction: column;
+
+    .title {
+        display: flex;
+        margin: 0;
+        justify-content: space-between;
+        line-height: 20px;
+        height: 20px;
+
+        .left {
+            span {
+                font-size: 8px;
+            }
+        }
+
+        .right {
+            color: #9E9EA1;
+
+            .num {
+                color: #6B6C70;
+                font-family: Poppins-Bold;
+                width: 80%;
+                height: 30px;
+                line-height: 30px;
+                font-size: 14px;
+            }
+        }
+    }
+
+    .box-cont {
+        height: 45px;
+        padding: 0 15px;
+        background: #17181D;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .left {
+            color: #6B6C70;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+
+            .num {
+                color: #FFFFFF;
+                font-family: Poppins-Bold;
+                width: 60%;
+                height: 30px;
+                line-height: 30px;
+                font-size: 14px;
+            }
+        }
+
+        .right {
+            height: 100%;
+            display: flex;
+            justify-content: space-between;
+
+            .approve {
+                font-family: Poppins-Medium, Poppins;
+                height: 100%;
+                margin-right: 8px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                .text {
+                    background: #1E2025;
+                    height: 12px;
+                    line-height: 12px;
+                    width: auto;
+                    font-size: 9px;
+                    color: #9E9EA1;
+                }
+            }
+
+            .line {
+                height: 100%;
+                width: 10px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                .line-cont {
+                    width: 1px;
+                    height: 31px;
+                    background: #1D2028;
+                }
+            }
+
+            .coin {
+                height: 100%;
+                width: 60px;
+                display: flex;
+                justify-content: flex-start;
+
+                .img {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin-left: 5px;
+                    margin-right: 5px;
+
+                    img {
+                        width: 20px;
+                        height: 20px;
+                    }
+                }
+
+                .name {
+                    height: 100%;
+                    flex: 1;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+            }
+
+
+        }
+    }
+
+    .onoff {
+        display: flex;
+        justify-content: flex-end;
+        font-size: 8px;
+
+        .text {
+            margin-right: 5px;
+            height: 20px;
+            line-height: 20px;
+            font-size: 8px;
+            font-family: Poppins-Medium, Poppins;
+            font-weight: 500;
+            color: #9E9EA1;
+        }
+
+        .bg-box {
+            width: 20px;
+            height: 10px;
+            margin: 5px;
+            border-radius: 5px;
+            background: #282932;
+            position: relative;
+
+            .box {
+                position: relative;
+                width: 12px;
+                height: 10px;
+                background: #16A16A;
+                border-radius: 5px;
+                left: 7px;
+                transition: 0.5s;
+
+                &.active {
+                    transition: 0.5s;
+                    background: #9E9EA1;
+
+                    left: 1px;
+                }
+            }
+        }
+    }
+
+    .btn {
+        height: 45px;
+        background: #16A16A;
+        border-radius: 7px;
+        font-size: 11px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .btn-disabled {
+        height: 45px;
+        background: #2D2F39;
+        border-radius: 7px;
+        font-size: 11px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+
+@media (min-width: 768px) {
+    .manage-box {
+        width: 96%;
+        max-width: 526px;
+        margin: 0 auto;
+        height: 95%;
+        min-height: 350px;
+        max-height: 430px;
+        padding: 25px 29px;
+        margin-bottom: 20px;
+        border-radius: 20px;
+
+        .title {
+            line-height: 30px;
+            height: 30px;
+            font-size: 18px;
+
+            .left {
+                span {
+                    font-size: 12px;
+                }
+            }
+
+            .right {
+                .num {
+                    height: 30px;
+                    line-height: 30px;
+                    font-size: 18px;
+                }
+            }
+        }
+
+        .box-cont {
+            padding: 0;
+            padding-left: 15px;
+            height: 15%;
+            min-height: 45px;
+            max-height: 60px;
+
+            .left {
+                .num {
+                    height: 45px;
+                    line-height: 45px;
+                    font-size: 22px;
+                }
+            }
+
+            .right {
+                height: 45px;
+
+                .approve {
+                    margin-right: 8px;
+
+                    .text {
+                        height: 20px;
+                        line-height: 20px;
+                        font-size: 12px;
+                        padding: 0 10px;
+                        cursor: pointer;
+                    }
+                }
+
+                .line {
+                    .line-cont {
+                        height: 80%;
+                        max-height: 51px;
+                    }
+                }
+
+                .coin {
+                    line-height: 60px;
+                    margin: 0;
+                    width: 120px;
+
+                    .img {
+                        img {
+                            width: 32px;
+                            height: 32px;
+                        }
+                    }
+                }
+
+
+            }
+        }
+
+        .onoff {
+            height: 30px;
+            line-height: 30px;
+            font-size: 12px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+
+            .text {
+                margin-right: 5px;
+                height: 20px;
+                line-height: 20px;
+                font-size: 12px;
+            }
+
+            .bg-box {
+                width: 32px;
+                height: 14px;
+                margin: 3px 7px;
+                border-radius: 7px;
+
+                .box {
+                    width: 20px;
+                    height: 14px;
+                    border-radius: 7px;
+                    left: 6px;
+
+                    &.active {
+                        left: -5px;
+                    }
+                }
+            }
+        }
+
+        .btn {
+            // height: 12%;
+            // min-height: 45px;
+            // max-height: 60px;
+            border-radius: 14px;
+            height: 60px;
+            font-size: 18px;
+        }
+
+        .btn-disabled {
+            // height: 12%;
+            // min-height: 45px;
+            // max-height: 60px;
+            border-radius: 14px;
+            height: 60px;
+            font-size: 18px;
+        }
+    }
+}

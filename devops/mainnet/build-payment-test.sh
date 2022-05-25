@@ -1,0 +1,1 @@
+ng b --project=payment-test --base-href=/payment/ --outputPath=dist/payment-prod --aot --prod 

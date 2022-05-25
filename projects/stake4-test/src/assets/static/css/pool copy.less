@@ -1,0 +1,1875 @@
+body,
+html,
+ul,
+li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+body {
+    color: #FFFFFF;
+    font-size: 12px;
+    font-family: Poppins;
+}
+
+.backdrop-filter {
+    background: none !important;
+    backdrop-filter: blur(30px);
+}
+
+body {
+    background: #17181D;
+}
+
+.filter {
+    filter: blur(20px);
+    transition: 0.5s ease;
+}
+
+img {
+    vertical-align: top;
+    border: none
+}
+
+@font-face {
+    font-family: Poppins;
+    src: url('./Poppins.ttf');
+}
+
+::-webkit-scrollbar {
+    width: 0 !important
+}
+
+/* 超小屏幕（手机，小于 768px） */
+.top {
+    display: fixed;
+    top: 0;
+    background: rgba(0, 0, 0, 0);
+    background-color: #15161A;
+    background-color: #fff;
+
+    .logo {
+        position: absolute;
+        left: 0;
+        height: 22px;
+        padding: 16.5px 20px;
+        z-index: 12;
+
+        img {
+            width: 88px;
+            height: 22px;
+        }
+    }
+
+    .connect {
+        position: absolute;
+        right: 12.5px;
+        background: #191B22;
+        height: 20px;
+        margin: 17.5px 0;
+        width: 100px;
+        display: flex;
+        justify-content: center;
+        z-index: 12;
+
+        .center {
+            width: auto;
+            display: flex;
+            justify-content: center;
+
+            .img {
+                display: none;
+                width: 10px;
+                height: 10px;
+                padding: 5px;
+            }
+
+            .text {
+                height: 20px;
+                line-height: 20px;
+                font-size: 10px;
+            }
+        }
+    }
+}
+
+
+.contant {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 43px;
+    z-index: 1;
+
+    .nav {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 43px;
+        height: 100vh;
+        transition: 0.5s;
+        display: flex;
+        justify-content: flex-start;
+        z-index: 10;
+        background: #191B22;
+
+        .main {
+            padding-top: 55px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+
+            ul {
+                display: flex;
+                justify-content: flex-start;
+                flex-direction: column;
+                margin: 5px 0;
+
+                li {
+                    margin: 16px 0;
+                    display: flex;
+                    justify-content: flex-start;
+
+                    .img {
+                        margin: 0 14px;
+                        transition: 0.5s;
+                        width: 15px;
+                        height: 15px;
+                    }
+
+                    &.home {
+                        .img {
+                            background: url('/static/img/home.png') no-repeat;
+                            background-size: 100% 100%;
+                        }
+                    }
+
+                    &.pool1 {
+                        .img {
+                            background: url('/static/img/pool1.png') no-repeat;
+                            background-size: 100% 100%;
+                        }
+                    }
+
+                    &.pool2 {
+                        .img {
+                            background: url('/static/img/pool2.png') no-repeat;
+                            background-size: 100% 100%;
+                        }
+                    }
+
+                    &.option {
+                        .img {
+                            background: url('/static/img/option.png') no-repeat;
+                            background-size: 100% 100%;
+                        }
+                    }
+
+
+
+                }
+
+                li:hover,
+                .active {
+                    .name {
+                        color: #fff !important;
+                    }
+
+                    &.home {
+                        .img {
+                            background: url('/static/img/home.png') no-repeat;
+                            background-size: 100% 100%;
+                        }
+                    }
+
+                    &.pool1 {
+                        .img {
+                            background: url('/static/img/pool1_2.png') no-repeat;
+                            background-size: 100% 100%;
+
+                        }
+                    }
+
+                    &.pool2 {
+                        .img {
+                            background: url('/static/img/pool2_2.png') no-repeat;
+                            background-size: 100% 100%;
+                        }
+                    }
+
+                    &.option {
+                        .img {
+                            background: url('/static/img/option.png') no-repeat;
+                            background-size: 100% 100%;
+                        }
+                    }
+                }
+            }
+
+            .menu {
+                display: flex;
+                flex-direction: row-reverse;
+                margin-right: 14px;
+                margin-bottom: 75px;
+
+                img {
+                    width: 15px;
+                    height: 15px;
+                }
+            }
+        }
+
+        .name {
+            position: relative;
+            transition: 0.5s;
+            color: #6B7595;
+            width: 0;
+            white-space: nowrap;
+            transform: translateX(-200px);
+        }
+
+        &.open {
+            width: 245px;
+
+            .img {
+                transform: translateX(10px) !important;
+            }
+
+            .name {
+                width: 150px;
+                transition: 0.5s;
+                margin-left: 10px;
+                transform: translateX(0) !important;
+            }
+
+            .menu {
+                img {
+                    transform: rotateY(180deg);
+                }
+            }
+        }
+
+        .cont {
+            flex: 1;
+            margin-left: 8px;
+            height: 100vh;
+
+        }
+    }
+
+    .contant-box {
+        position: relative;
+        width: 100%;
+        .tabs {
+            box-sizing: border-box;
+            padding: 0 8px;
+            position: absolute;
+            padding-top: 67.5px;
+            width: 100%;
+            background: #17181D;
+            z-index: 1;
+
+            ul {
+                margin-left: 10px;
+                white-space: nowrap;
+                overflow-x: auto;
+
+                li {
+                    display: inline-block;
+                    position: relative;
+                    transition: 0.5s;
+
+                    .tab-name {
+                        color: #6B6C70;
+                        height: 20px;
+                        line-height: 20px;
+                        margin-right: 20px;
+                    }
+
+                    &.active {
+                        .tab-name {
+                            color: #fff;
+                        }
+
+                        .bg {
+                            position: absolute;
+                            width: 28px;
+                            height: 8px;
+                            top: 10px;
+                            right: 14px;
+                            z-index: -1;
+                            background-color: #16A16A;
+                        }
+                    }
+                }
+
+            }
+
+            .tabs-bg {
+                display: none;
+            }
+        }
+
+        .cont {
+            box-sizing: border-box;
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+            overflow-y: scroll;
+            box-sizing: border-box;
+
+            .main {
+                .boxs {
+                    margin-top: 100px;
+                    width: 100%;
+                    height: auto;
+                    box-sizing: border-box;
+
+                    .box {
+                        margin: 0 auto;
+                        display: grid;
+                        grid-template-columns: 100%;
+
+                        .swap-box,
+                        .add-box,
+                        .manage-box,
+                        .stake-box,
+                        .other-box {
+                            box-sizing: border-box;
+                            width: 316px;
+                            max-width: 96%;
+                            margin: 5px auto;
+                            padding: 15px;
+                            background-color: #1D1E25;
+                            border-radius: 10px;
+                            opacity: 0.57;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: space-between;
+                            margin-bottom: 10px;
+                        }
+
+                        .swap-box {
+                            .box-cont {
+                                height: 25px;
+                                padding: 10px 5px;
+                                border-radius: 2px;
+                                background: #17181D;
+                                display: flex;
+                                justify-content: space-between;
+
+                                .left {
+                                    color: #6B6C70;
+                                    display: flex;
+                                    justify-content: space-between;
+                                    flex-direction: column;
+
+                                    .box-top {
+                                        font-size: 9px;
+                                    }
+
+                                    .num {
+                                        font-size: 14px;
+                                    }
+                                }
+
+                                .right {
+                                    position: relative;
+                                    display: flex;
+                                    justify-content: space-between;
+
+                                    .approve {
+                                        height: 100%;
+                                        display: flex;
+                                        justify-content: center;
+                                        align-items: center;
+
+                                        .text {
+                                            background: #1E2025;
+                                            height: 12px;
+                                            line-height: 12px;
+                                            width: auto;
+                                            font-size: 9px;
+                                        }
+                                    }
+
+                                    .balance {
+                                        display: flex;
+                                        justify-content: space-between;
+                                        flex-direction: column;
+                                        font-size: 8px;
+
+                                        .balance-bottom {
+                                            width: 100%;
+                                            height: 12px;
+                                            line-height: 12px;
+                                            display: flex;
+                                            flex-direction: row-reverse;
+
+                                            .bottom-box {
+                                                background: #9E9EA1;
+                                                text-align: center;
+
+                                                &.blue {
+                                                    background: #0058FF;
+
+                                                }
+                                            }
+                                        }
+
+                                        .approve {
+                                            width: 40px;
+                                            background-color: #9E9EA1;
+                                        }
+                                    }
+
+                                    .line {
+                                        position: relative;
+                                        top: -3px;
+                                        width: 1px;
+                                        height: 31px;
+                                        margin-left: 8px;
+                                        background: #1D2028;
+                                    }
+
+                                    .coin {
+                                        height: 100%;
+                                        line-height: 20px;
+                                        width: 100px;
+                                        display: flex;
+                                        justify-content: flex-start;
+
+                                        .img {
+                                            display: flex;
+                                            justify-content: center;
+                                            align-items: center;
+                                            margin: 0 5px;
+
+                                            img {
+                                                width: 20px;
+                                                height: 20px;
+                                            }
+                                        }
+
+                                        .name {
+                                            flex: 1;
+                                            height: 30px;
+                                            line-height: 30px;
+                                        }
+                                    }
+
+                                    .triangle {
+                                        position: absolute;
+                                        right: 0px;
+                                        height: 30px;
+                                        text-align: right;
+                                        display: flex;
+                                        align-items: center;
+                                        justify-content: center;
+
+                                        img {
+                                            width: 15px;
+                                            height: 15px;
+                                        }
+                                    }
+                                }
+                            }
+
+                            .to {
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+
+                                img {
+                                    width: 20px;
+                                    height: 20px;
+                                    margin: 10px;
+                                }
+                            }
+                        }
+
+                        .add-box {
+                            display: none;
+
+                            .box-cont {
+                                height: 45px;
+                                margin-bottom: 13px;
+                                background: #17181D;
+                                display: flex;
+                                justify-content: space-between;
+
+                                .left {
+                                    color: #6B6C70;
+                                    padding: 6px 10px;
+
+                                    .box-top {
+                                        height: 9px;
+                                        font-size: 9px;
+                                    }
+
+                                    .num {
+                                        height: 30px;
+                                        line-height: 30px;
+                                        font-size: 14px;
+                                    }
+                                }
+
+                                .right {
+                                    display: flex;
+                                    justify-content: space-between;
+
+                                    .approve {
+                                        height: 100%;
+                                        margin-right: 8px;
+                                        display: flex;
+                                        justify-content: center;
+                                        align-items: center;
+
+                                        .text {
+                                            background: #1E2025;
+                                            height: 12px;
+                                            line-height: 12px;
+                                            width: auto;
+                                            font-size: 9px;
+                                        }
+                                    }
+
+                                    .line {
+                                        width: 1px;
+                                        height: 31px;
+                                        margin-top: 6px;
+                                        background: #1D2028;
+                                    }
+
+                                    .coin {
+                                        height: 100%;
+                                        line-height: 45px;
+                                        width: 80px;
+                                        display: flex;
+                                        justify-content: flex-start;
+
+                                        .img {
+                                            margin-top: 12.5px;
+                                            margin-left: 5px;
+                                            margin-right: 5px;
+
+                                            img {
+                                                width: 20px;
+                                                height: 20px;
+                                            }
+                                        }
+
+                                        .name {
+                                            flex: 1;
+                                            height: 12px;
+                                            line-height: 12px;
+                                            margin-top: 18px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        .manage-box {
+                            display: none;
+
+                            .title {
+                                display: flex;
+                                justify-content: space-between;
+                                line-height: 30px;
+                                height: 30px;
+
+                                .left {
+                                    span {
+                                        font-size: 8px;
+                                    }
+                                }
+                            }
+
+                            .box-cont {
+                                height: 45px;
+                                margin-bottom: 13px;
+                                background: #17181D;
+                                display: flex;
+                                justify-content: space-between;
+
+                                .left {
+                                    color: #6B6C70;
+                                    padding: 6px 10px;
+
+                                    .box-top {
+                                        height: 9px;
+                                        font-size: 9px;
+                                    }
+
+                                    .num {
+                                        height: 30px;
+                                        line-height: 30px;
+                                        font-size: 14px;
+                                    }
+                                }
+
+                                .right {
+                                    display: flex;
+                                    justify-content: space-between;
+
+                                    .approve {
+                                        height: 100%;
+                                        margin-right: 8px;
+                                        display: flex;
+                                        justify-content: center;
+                                        align-items: center;
+
+                                        .text {
+                                            background: #1E2025;
+                                            height: 12px;
+                                            line-height: 12px;
+                                            width: auto;
+                                            font-size: 9px;
+                                        }
+                                    }
+
+                                    .line {
+                                        width: 1px;
+                                        height: 31px;
+                                        margin-top: 6px;
+                                        background: #1D2028;
+                                    }
+
+                                    .coin {
+                                        height: 100%;
+                                        line-height: 45px;
+                                        width: 80px;
+                                        display: flex;
+                                        justify-content: flex-start;
+
+                                        .img {
+                                            margin-top: 12.5px;
+                                            margin-left: 5px;
+                                            margin-right: 5px;
+
+                                            img {
+                                                width: 20px;
+                                                height: 20px;
+                                            }
+                                        }
+
+                                        .name {
+                                            flex: 1;
+                                            height: 12px;
+                                            line-height: 12px;
+                                            margin-top: 18px;
+                                        }
+                                    }
+                                }
+                            }
+
+                            .onoff {
+                                display: flex;
+                                justify-content: flex-end;
+                                font-size: 8px;
+
+                                .text {
+                                    margin-right: 5px;
+                                    height: 20px;
+                                    line-height: 20px;
+                                }
+
+                                .bg-box {
+                                    width: 20px;
+                                    height: 10px;
+                                    margin: 5px;
+                                    border-radius: 5px;
+                                    background: #282932;
+                                    position: relative;
+
+                                    .box {
+                                        position: relative;
+                                        width: 12px;
+                                        height: 10px;
+                                        background: #16A16A;
+                                        border-radius: 5px;
+                                        left: 7px;
+                                        transition: 0.5s;
+
+                                        &.active {
+                                            transition: 0.5s;
+                                            left: 1px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        .stake-box {
+                            display: none;
+
+                            .title {
+                                margin-top: 10px;
+                                height: 20px;
+                                margin-bottom: 30px;
+                                display: flex;
+                                justify-content: flex-start;
+
+                                .box {
+                                    display: inline-block;
+                                    width: 3px;
+                                    height: 7px;
+                                    margin: 6.5px 3px;
+                                    background: #16A16A;
+                                }
+
+                                .text {
+                                    position: relative;
+                                    top: 3px;
+                                    line-height: 20px;
+                                    height: 20px;
+                                }
+                            }
+
+                            .pand {
+                                margin-bottom: 10px;
+
+                                .pand-top {
+                                    height: 30px;
+                                    line-height: 30px;
+                                    display: flex;
+                                    justify-content: space-between;
+
+                                    .right {
+                                        color: #9E9EA1;
+                                        font-size: 8px;
+                                    }
+                                }
+
+                                .pand-bottom {
+                                    height: 25px;
+                                    padding: 10px;
+                                    margin-bottom: 10px;
+                                    border-radius: 2px;
+                                    background: #17181D;
+                                    display: flex;
+                                    justify-content: space-between;
+
+                                    .num {
+                                        color: #6B6C70;
+                                    }
+
+                                    .text {
+                                        width: 50px;
+                                        height: 15px;
+                                        line-height: 15px;
+                                        margin: 5px 0;
+                                        background: #0058FF;
+                                        text-align: center;
+                                        font-size: 8px;
+                                    }
+                                }
+                            }
+
+                            .stake-btn {
+                                display: flex;
+                                justify-content: space-between;
+                                height: 45px;
+                                line-height: 45px;
+                                margin: 10px 0;
+
+                                .left {
+                                    span {
+                                        font-size: 10px;
+                                        color: #9E9EA1;
+                                    }
+                                }
+
+                                .right {
+                                    width: 130px;
+                                    background: #16A16A;
+                                    border-radius: 7px;
+                                    text-align: center;
+                                    line-height: 45px;
+                                }
+                            }
+
+                        }
+
+
+                        .other-box {
+                            position: relative;
+
+                            .title {
+                                margin-top: 13px;
+                                height: 20px;
+                                margin-bottom: 14px;
+                                display: flex;
+                                justify-content: flex-start;
+
+                                .box {
+                                    display: inline-block;
+                                    width: 3px;
+                                    height: 7px;
+                                    margin: 6.5px 3px;
+                                    background: #16A16A;
+                                }
+
+                                .text {
+                                    position: relative;
+                                    top: 3px;
+                                    line-height: 20px;
+                                    height: 20px;
+                                }
+                            }
+
+                            .list {
+                                display: flex;
+                                justify-content: space-between;
+                                margin-bottom: 15px;
+
+                                .left {
+                                    height: 20px;
+                                    font-size: 9px;
+                                    font-family: Poppins-Medium, Poppins;
+                                    font-weight: 500;
+                                    color: #9E9EA1;
+                                    line-height: 20px;
+                                }
+
+                                .right {
+                                    display: flex;
+                                    justify-content: flex-start;
+
+                                    .num {
+                                        height: 20px;
+                                        font-size: 9px;
+                                        font-family: Poppins-Medium, Poppins;
+                                        font-weight: 500;
+                                        line-height: 20px;
+
+                                        &.gray {
+                                            color: #9E9EA1;
+                                            margin-right: 5px;
+                                        }
+                                    }
+
+                                    .claim {
+                                        text-align: center;
+                                        height: 20px;
+                                        line-height: 20px;
+                                        background: #16A16A;
+                                        border-radius: 1px;
+                                        font-size: 9px;
+                                        min-width: 46px;
+                                        margin-left: 7px;
+                                    }
+                                }
+                            }
+
+                            .list:last-child {
+                                margin-bottom: 0;
+                            }
+
+                        }
+
+                        .btn {
+                            margin-top: 13px;
+                            height: 42px;
+                            background: #16A16A;
+                            border-radius: 7px;
+                            font-size: 11px;
+                            text-align: center;
+                            line-height: 42px;
+                        }
+
+                        .fee {
+                            display: none;
+                            text-align: right;
+                            margin-top: 10px;
+                        }
+
+                        .blue {
+                            background-color: #0058FF !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
+}
+
+
+
+.dialog {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0);
+
+    .center {
+        opacity: 1;
+        transition: 0.2s;
+        width: 280px;
+        height: 200px;
+        padding: 20px 30px;
+        background: RGBA(25, 25, 26, 1);
+        border-radius: 12px;
+        position: relative;
+
+        .title {
+            height: 20px;
+            line-height: 20px;
+            margin-bottom: 3px;
+        }
+
+        ul {
+            height: 160px;
+            overflow: hidden;
+            overflow-y: scroll;
+
+            li {
+                height: 40px;
+                border-radius: 5px;
+                margin: 10px 0;
+                display: flex;
+                justify-content: space-between;
+
+                .left {
+                    display: flex;
+                    justify-content: flex-start;
+
+                    .selected {
+                        opacity: 0;
+                        padding: 15px 0;
+                        padding-left: 12.5px;
+                        padding-right: 7px;
+
+                        img {
+                            width: 10px;
+                            height: 10px;
+                        }
+                    }
+
+                    .icon {
+                        padding: 9px 0;
+
+                        img {
+                            width: 22px;
+                            height: 22px;
+                        }
+                    }
+
+                    .name {
+                        margin-left: 10px;
+                        height: 40px;
+                        line-height: 40px;
+                    }
+                }
+
+                .right {
+                    height: 40px;
+                    margin-right: 12.5px;
+                    line-height: 40px;
+                    font-size: 8px;
+                }
+
+                &.active {
+                    background-color: rgba(0, 0, 0, 0.37);
+
+                    .selected {
+                        opacity: 1 !important;
+                    }
+                }
+            }
+
+        }
+
+        .checked {
+            display: none;
+            position: absolute;
+            top: 54px;
+            width: 280px;
+            height: 40px;
+            background-color: rgba(0, 0, 0, 0.37);
+        }
+    }
+}
+
+
+/* 小屏幕（平板，大于等于 768px） */
+@media (min-width: 768px) {
+
+    .top {
+        .logo {
+            height: 44px;
+            padding: 33px 40px 0;
+
+            img {
+                width: 176px;
+                height: 44px;
+            }
+        }
+
+        .connect {
+            right: 25px;
+            height: 40px;
+            margin: 35px 0 0;
+            width: auto;
+
+            .center {
+                .img {
+                    display: block;
+                    width: 20px;
+                    height: 20px;
+                    padding: 10px;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+
+                .text {
+                    height: 40px;
+                    line-height: 40px;
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+
+
+
+    .contant {
+
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        padding-left: 86px;
+        z-index: 1;
+        font-size: 14px;
+
+        .tabs {
+            max-width: 1076px;
+            margin: 0 auto;
+            position: relative;
+            top: 90px;
+            left: 10px;
+            font-size: 20px;
+
+            ul {
+                li {
+                    cursor: pointer;
+
+                    .tab-name {
+                        color: #6B6C70;
+                        height: 40px;
+                        line-height: 40px;
+                        margin-right: 40px;
+                        font-size: 20px;
+                    }
+
+                    &.active {
+                        .tab-name {
+                            color: #fff;
+                        }
+
+                        .bg {
+                            position: absolute;
+                            width: 53px;
+                            height: 13px;
+                            top: 20px;
+                            right: 28px;
+                            z-index: -1;
+                            background-color: #16A16A;
+                        }
+                    }
+                }
+
+            }
+
+            .tabs-bg {
+                display: none;
+            }
+        }
+
+        .nav {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 86px;
+            height: 100vh;
+            transition: 0.5s;
+            display: flex;
+            justify-content: flex-start;
+            z-index: 10;
+            background: #191B22;
+
+            .main {
+                padding-top: 55px;
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                flex-direction: column;
+
+                ul {
+                    display: flex;
+                    justify-content: flex-start;
+                    flex-direction: column;
+                    margin: 10px 0;
+
+                    li {
+                        margin: 32px 0;
+                        display: flex;
+                        justify-content: flex-start;
+
+                        .img {
+                            margin: 0 28px;
+                            transition: 0.5s;
+                            width: 30px;
+                            height: 30px;
+                        }
+
+                        &.home {
+                            .img {
+                                background: url('/static/img/home.png') no-repeat;
+                                background-size: 100% 100%;
+                            }
+                        }
+
+                        &.pool1 {
+                            .img {
+                                background: url('/static/img/pool1.png') no-repeat;
+                                background-size: 100% 100%;
+                            }
+                        }
+
+                        &.pool2 {
+                            .img {
+                                background: url('/static/img/pool2.png') no-repeat;
+                                background-size: 100% 100%;
+                            }
+                        }
+
+                        &.option {
+                            .img {
+                                background: url('/static/img/option.png') no-repeat;
+                                background-size: 100% 100%;
+                            }
+                        }
+
+
+
+                    }
+
+                    li:hover,
+                    .active {
+                        .name {
+                            color: #fff !important;
+                        }
+
+                        &.home {
+                            .img {
+                                background: url('/static/img/home.png') no-repeat;
+                                background-size: 100% 100%;
+                            }
+                        }
+
+                        &.pool1 {
+                            .img {
+                                background: url('/static/img/pool1_2.png') no-repeat;
+                                background-size: 100% 100%;
+
+                            }
+                        }
+
+                        &.pool2 {
+                            .img {
+                                background: url('/static/img/pool2_2.png') no-repeat;
+                                background-size: 100% 100%;
+                            }
+                        }
+
+                        &.option {
+                            .img {
+                                background: url('/static/img/option.png') no-repeat;
+                                background-size: 100% 100%;
+                            }
+                        }
+                    }
+                }
+
+                .menu {
+                    display: flex;
+                    flex-direction: row-reverse;
+                    margin-right: 28px;
+                    margin-bottom: 150px;
+
+                    img {
+                        width: 30px;
+                        height: 30px;
+                    }
+                }
+            }
+
+            .name {
+                position: relative;
+                transition: 0.5s;
+                color: #6B7595;
+                width: 0;
+                white-space: nowrap;
+                transform: translateX(-200px);
+            }
+
+            &.open {
+                width: 490px;
+
+                .img {
+                    transform: translateX(20px) !important;
+                }
+
+                .name {
+                    width: 300px;
+                    transition: 0.5s;
+                    margin-left: 20px;
+                    transform: translateX(0) !important;
+                }
+
+                .menu {
+                    img {
+                        transform: rotateY(180deg);
+                    }
+                }
+            }
+
+            .cont {
+                flex: 1;
+                margin-left: 16px;
+                height: 100vh;
+
+            }
+        }
+
+        .cont {
+            width: 100%;
+            max-width: 1076px;
+            padding-top: 160px;
+            padding-bottom: 0;
+
+            .main {
+                .boxs {
+                    width: 100%;
+                    height: 100%;
+
+                    .box {
+                        width: 100%;
+                        height: 100%;
+                        display: grid;
+                        grid-template-columns: 50% 50%;
+                        grid-template-rows: 50% 50%;
+
+                        .swap-box,
+                        .add-box,
+                        .manage-box,
+                        .stake-box,
+                        .other-box {
+                            width: 96%;
+                            max-width: 526px;
+                            padding: 20px;
+                            border-radius: 20px;
+                        }
+
+                        .swap-box {
+                            .box-cont {
+                                height: 40px;
+                                padding: 22.5px 20px;
+                                border-radius: 5px;
+
+                                .left {
+                                    display: flex;
+                                    justify-content: space-between;
+                                    flex-direction: column;
+
+                                    .box-top {
+                                        font-size: 12px;
+                                    }
+
+                                    .num {
+                                        font-size: 22px;
+                                    }
+                                }
+
+                                .right {
+                                    .approve {
+                                        .text {
+                                            font-size: 12px;
+                                        }
+                                    }
+
+                                    .balance {
+                                        .balance-bottom {
+                                            height: 20px;
+                                            line-height: 20px;
+
+                                            .bottom-box {
+                                                width: auto;
+                                                padding: 0 5px;
+                                            }
+                                        }
+                                    }
+
+                                    .line {
+                                        top: -6px;
+                                        height: 60px;
+                                    }
+
+                                    .coin {
+                                        width: 120px;
+                                        line-height: 40px;
+
+                                        .img {
+                                            img {
+                                                width: 40px;
+                                                height: 40px;
+                                            }
+                                        }
+
+                                        .name {
+                                            font-size: 18px;
+                                            height: 40px;
+                                            padding: 0 5px;
+                                            line-height: 40px;
+                                        }
+                                    }
+
+                                    .triangle {
+                                        height: 40px;
+
+                                        img {
+                                            width: 15px;
+                                            height: 15px;
+                                        }
+                                    }
+                                }
+                            }
+
+                        }
+
+                        .add-box {
+                            display: none;
+
+                            .box-cont {
+                                height: 45px;
+                                margin-bottom: 13px;
+                                background: #17181D;
+                                display: flex;
+                                justify-content: space-between;
+
+                                .left {
+                                    color: #6B6C70;
+                                    padding: 6px 10px;
+
+                                    .box-top {
+                                        height: 9px;
+                                        font-size: 9px;
+                                    }
+
+                                    .num {
+                                        height: 30px;
+                                        line-height: 30px;
+                                        font-size: 14px;
+                                    }
+                                }
+
+                                .right {
+                                    display: flex;
+                                    justify-content: space-between;
+
+                                    .approve {
+                                        height: 100%;
+                                        margin-right: 8px;
+                                        display: flex;
+                                        justify-content: center;
+                                        align-items: center;
+
+                                        .text {
+                                            background: #1E2025;
+                                            height: 12px;
+                                            line-height: 12px;
+                                            width: auto;
+                                            font-size: 9px;
+                                        }
+                                    }
+
+                                    .line {
+                                        width: 1px;
+                                        height: 31px;
+                                        margin-top: 6px;
+                                        background: #1D2028;
+                                    }
+
+                                    .coin {
+                                        height: 100%;
+                                        line-height: 45px;
+                                        width: 80px;
+                                        display: flex;
+                                        justify-content: flex-start;
+
+                                        .img {
+                                            margin-top: 12.5px;
+                                            margin-left: 5px;
+                                            margin-right: 5px;
+
+                                            img {
+                                                width: 20px;
+                                                height: 20px;
+                                            }
+                                        }
+
+                                        .name {
+                                            flex: 1;
+                                            height: 12px;
+                                            line-height: 12px;
+                                            margin-top: 18px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        .manage-box {
+                            display: none;
+
+                            .title {
+                                display: flex;
+                                justify-content: space-between;
+                                line-height: 30px;
+                                height: 30px;
+
+                                .left {
+                                    span {
+                                        font-size: 8px;
+                                    }
+                                }
+                            }
+
+                            .box-cont {
+                                height: 45px;
+                                margin-bottom: 13px;
+                                background: #17181D;
+                                display: flex;
+                                justify-content: space-between;
+
+                                .left {
+                                    color: #6B6C70;
+                                    padding: 6px 10px;
+
+                                    .box-top {
+                                        height: 9px;
+                                        font-size: 9px;
+                                    }
+
+                                    .num {
+                                        height: 30px;
+                                        line-height: 30px;
+                                        font-size: 14px;
+                                    }
+                                }
+
+                                .right {
+                                    display: flex;
+                                    justify-content: space-between;
+
+                                    .approve {
+                                        height: 100%;
+                                        margin-right: 8px;
+                                        display: flex;
+                                        justify-content: center;
+                                        align-items: center;
+
+                                        .text {
+                                            background: #1E2025;
+                                            height: 12px;
+                                            line-height: 12px;
+                                            width: auto;
+                                            font-size: 9px;
+                                        }
+                                    }
+
+                                    .line {
+                                        width: 1px;
+                                        height: 31px;
+                                        margin-top: 6px;
+                                        background: #1D2028;
+                                    }
+
+                                    .coin {
+                                        height: 100%;
+                                        line-height: 45px;
+                                        width: 80px;
+                                        display: flex;
+                                        justify-content: flex-start;
+
+                                        .img {
+                                            margin-top: 12.5px;
+                                            margin-left: 5px;
+                                            margin-right: 5px;
+
+                                            img {
+                                                width: 20px;
+                                                height: 20px;
+                                            }
+                                        }
+
+                                        .name {
+                                            flex: 1;
+                                            height: 12px;
+                                            line-height: 12px;
+                                            margin-top: 18px;
+                                        }
+                                    }
+                                }
+                            }
+
+                            .onoff {
+                                display: flex;
+                                justify-content: flex-end;
+                                font-size: 8px;
+
+                                .text {
+                                    margin-right: 5px;
+                                    height: 20px;
+                                    line-height: 20px;
+                                }
+
+                                .bg-box {
+                                    width: 20px;
+                                    height: 10px;
+                                    margin: 5px;
+                                    border-radius: 5px;
+                                    background: #282932;
+                                    position: relative;
+
+                                    .box {
+                                        position: relative;
+                                        width: 12px;
+                                        height: 10px;
+                                        background: #16A16A;
+                                        border-radius: 5px;
+                                        left: 7px;
+                                        transition: 0.5s;
+
+                                        &.active {
+                                            transition: 0.5s;
+                                            left: 1px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        .stake-box {
+                            display: none;
+
+                            .title {
+                                margin-top: 10px;
+                                height: 20px;
+                                margin-bottom: 30px;
+                                display: flex;
+                                justify-content: flex-start;
+
+                                .box {
+                                    display: inline-block;
+                                    width: 3px;
+                                    height: 7px;
+                                    margin: 6.5px 3px;
+                                    background: #16A16A;
+                                }
+
+                                .text {
+                                    position: relative;
+                                    top: 3px;
+                                    line-height: 20px;
+                                    height: 20px;
+                                }
+                            }
+
+                            .pand {
+                                margin-bottom: 10px;
+
+                                .pand-top {
+                                    height: 30px;
+                                    line-height: 30px;
+                                    display: flex;
+                                    justify-content: space-between;
+
+                                    .right {
+                                        color: #9E9EA1;
+                                        font-size: 8px;
+                                    }
+                                }
+
+                                .pand-bottom {
+                                    height: 25px;
+                                    padding: 10px;
+                                    margin-bottom: 10px;
+                                    border-radius: 2px;
+                                    background: #17181D;
+                                    display: flex;
+                                    justify-content: space-between;
+
+                                    .num {
+                                        color: #6B6C70;
+                                    }
+
+                                    .text {
+                                        width: 50px;
+                                        height: 15px;
+                                        line-height: 15px;
+                                        margin: 5px 0;
+                                        background: #0058FF;
+                                        text-align: center;
+                                        font-size: 8px;
+                                    }
+                                }
+                            }
+
+                            .stake-btn {
+                                display: flex;
+                                justify-content: space-between;
+                                height: 45px;
+                                line-height: 45px;
+                                margin: 10px 0;
+
+                                .left {
+                                    span {
+                                        font-size: 10px;
+                                        color: #9E9EA1;
+                                    }
+                                }
+
+                                .right {
+                                    width: 130px;
+                                    background: #16A16A;
+                                    border-radius: 7px;
+                                    text-align: center;
+                                    line-height: 45px;
+                                }
+                            }
+
+                        }
+
+
+                        .other-box {
+                            position: relative;
+
+                            .title {
+                                margin-top: 13px;
+                                height: 20px;
+                                margin-bottom: 14px;
+                                display: flex;
+                                justify-content: flex-start;
+
+                                .box {
+                                    display: inline-block;
+                                    width: 3px;
+                                    height: 7px;
+                                    margin: 6.5px 3px;
+                                    background: #16A16A;
+                                }
+
+                                .text {
+                                    position: relative;
+                                    top: 3px;
+                                    line-height: 20px;
+                                    height: 20px;
+                                }
+                            }
+
+                            .list {
+                                display: flex;
+                                justify-content: space-between;
+                                margin-bottom: 15px;
+
+                                .left {
+                                    height: 20px;
+                                    font-size: 9px;
+                                    font-family: Poppins-Medium, Poppins;
+                                    font-weight: 500;
+                                    color: #9E9EA1;
+                                    line-height: 20px;
+                                }
+
+                                .right {
+                                    display: flex;
+                                    justify-content: flex-start;
+
+                                    .num {
+                                        height: 20px;
+                                        font-size: 9px;
+                                        font-family: Poppins-Medium, Poppins;
+                                        font-weight: 500;
+                                        line-height: 20px;
+
+                                        &.gray {
+                                            color: #9E9EA1;
+                                            margin-right: 5px;
+                                        }
+                                    }
+
+                                    .claim {
+                                        text-align: center;
+                                        height: 20px;
+                                        line-height: 20px;
+                                        background: #16A16A;
+                                        border-radius: 1px;
+                                        font-size: 9px;
+                                        min-width: 46px;
+                                        margin-left: 7px;
+                                    }
+                                }
+                            }
+
+                            .list:last-child {
+                                margin-bottom: 0;
+                            }
+
+                        }
+
+                        .btn {
+                            height: 70px;
+                            border-radius: 14px;
+                            font-size: 18px;
+                            text-align: center;
+                            line-height: 70px;
+                        }
+
+                        .fee {
+                            display: block;
+                            font-size: 12px;
+                        }
+
+                        .blue {
+                            background-color: #0058FF !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
+
+    .dialog {
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        z-index: 9999;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(0, 0, 0, 0);
+
+        .center {
+            opacity: 1;
+            transition: 0.2s;
+            width: 280px;
+            height: 200px;
+            padding: 20px 30px;
+            background: RGBA(25, 25, 26, 1);
+            border-radius: 12px;
+            position: relative;
+
+            .title {
+                height: 20px;
+                line-height: 20px;
+                margin-bottom: 3px;
+            }
+
+            ul {
+                height: 160px;
+                overflow: hidden;
+                overflow-y: scroll;
+
+                li {
+                    height: 40px;
+                    border-radius: 5px;
+                    margin: 10px 0;
+                    display: flex;
+                    justify-content: space-between;
+
+                    .left {
+                        display: flex;
+                        justify-content: flex-start;
+
+                        .selected {
+                            opacity: 0;
+                            padding: 15px 0;
+                            padding-left: 12.5px;
+                            padding-right: 7px;
+
+                            img {
+                                width: 10px;
+                                height: 10px;
+                            }
+                        }
+
+                        .icon {
+                            padding: 9px 0;
+
+                            img {
+                                width: 22px;
+                                height: 22px;
+                            }
+                        }
+
+                        .name {
+                            margin-left: 10px;
+                            height: 40px;
+                            line-height: 40px;
+                        }
+                    }
+
+                    .right {
+                        height: 40px;
+                        margin-right: 12.5px;
+                        line-height: 40px;
+                        font-size: 8px;
+                    }
+
+                    &.active {
+                        background-color: rgba(0, 0, 0, 0.37);
+
+                        .selected {
+                            opacity: 1 !important;
+                        }
+                    }
+                }
+
+            }
+
+            .checked {
+                display: none;
+                position: absolute;
+                top: 54px;
+                width: 280px;
+                height: 40px;
+                background-color: rgba(0, 0, 0, 0.37);
+            }
+        }
+    }
+}
+
+/* 中等屏幕（桌面显示器，大于等于 992px） */
+@media (min-width: 992px) {}
+
+/* 大屏幕（大桌面显示器，大于等于 1200px） */
+@media (min-width: 1200px) {}

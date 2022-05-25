@@ -1,0 +1,79 @@
+.dialog-2 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.39);
+
+    .center {
+        opacity: 1;
+        transition: 0.2s;
+        width: 280px;
+        min-height: 200px;
+        padding: 30px 30px;
+        background: RGBA(25, 25, 26, 0.95);
+        border-radius: 12px;
+        position: relative;
+        border: 2px solid rgba(255, 255, 255, 0.06);
+
+        .title {
+            height: 30px;
+            line-height: 30px;
+            margin-bottom: 30px;
+        }
+
+        ul {
+            position: relative;
+            overflow: hidden;
+            overflow-y: scroll;
+        }
+
+        .checked {
+            cursor: pointer;
+            position: absolute;
+            top: 54px;
+            width: 280px;
+            height: 40px;
+            border-radius: 2px;
+            transition: 0.5s;
+            background-color: rgba(0, 0, 0, 0.37);
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    @paddingLeft: 86px;
+
+    .dialog-2 {
+        .center {
+            width: 504px;
+            max-height: 357px;
+            padding: 30px 45px;
+            border-radius: 21px;
+
+            .title {
+                height: 32px;
+                font-size: 20px;
+                line-height: 32px;
+                margin-bottom: 26px;
+            }
+
+            ul {
+            }
+
+            .checked {
+                cursor: pointer;
+                position: absolute;
+                top: 0px;
+                width: 504px;
+                height: 70px;
+            }
+        }
+    }
+
+}

@@ -1,0 +1,1 @@
+ng b --project=home-test --base-href=/home/ 

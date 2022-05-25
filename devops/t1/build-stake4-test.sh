@@ -1,0 +1,1 @@
+ng b --project=stake4-test --base-href=/stake4/ --outputPath=dist/stake4-prod --aot --prod

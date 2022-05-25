@@ -1,0 +1,13 @@
+<li [ngClass]="{active:selected}" (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()" (click)="selectedCoin()">
+    <div class="left">
+        <div class="selected">
+            <img src="assets/static/img/checked.png" alt="">
+        </div>
+        <div class="icon">
+            <img src="{{safeImgSrc()}}" alt="">
+        </div>
+        <div class="name" index='0'>{{symbol}}</div>
+    </div>
+    <div class="right">{{"Balance"|translate}}: {{boot.balance.coinsBalance[index].toFormat(4,1)}}
+    </div>
+</li>

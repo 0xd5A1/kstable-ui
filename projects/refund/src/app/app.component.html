@@ -1,0 +1,97 @@
+<section>
+	<input type="text" name="startBlock" [(ngModel)]="startBlock" >
+	<button (click)="printLog()">Print log</button>
+	<input *ngIf="!boot.accounts||boot.accounts.length===0" type="button" value="Connect MetaMask"
+		(click)="boot.connentMetaMask()">
+	<p *ngIf="boot.accounts&&boot.accounts.length>0">
+		<label>Wallet Address: </label><span>{{boot.accounts[0]}}</span>
+	</p>
+	<p *ngIf="boot.accounts&&boot.accounts.length>0">
+		<label>ChainId: </label><span *ngIf="this.boot.network">{{this.boot.network.chainId}}</span>
+	</p>
+</section>
+<section *ngIf="boot.accounts&&boot.accounts.length>0">
+	<h1>Pool: <a href="{{getExplorerAddressURL(this.boot.poolContract.address)}}"
+			target="_blank">{{this.boot.poolContract.address}}</a> </h1>
+	<h2>Owner: </h2>
+	<p>
+		<label>Pool Owner: </label><span>{{poolOwner}}</span>
+	</p>
+	<p *ngIf="poolOwner.toLowerCase()!=boot.defaultOwner.address.toLowerCase() && boot.isPoolOwner">
+		<button name="btnPoolTransferOwner" (click)="transferPoolOwnerTo()">Transfer Owner To
+			{{boot.defaultOwner.address}}</button>
+	</p>
+	<h2>Balance: </h2>
+	<p>
+		<label>CUSD: </label><span>{{boot.poolCusdBalance}} CUSD</span>
+	</p>
+	<p>
+		<label>USDT: </label><span>{{boot.poolUsdtBalance}} USDT</span>
+	</p>
+	<p>
+		<label>USDC: </label><span>{{boot.poolUsdcBalance}} USDC</span>
+	</p>
+	<h2>Virtual Price:</h2>
+	<p>
+		<span>{{poolVirtualPrice}}</span>
+	</p>
+	<h2>Admin Fee: </h2>
+	<p>
+		<label>CUSD: </label><span>{{boot.formatEther(boot.adminFeeIncomeBusd,'cusd')}} CUSD</span>
+	</p>
+	<p>
+		<label>USDT: </label><span>{{boot.formatEther(boot.adminFeeIncomeUsdt,'usdt')}} USDT</span>
+	</p>
+	<p>
+		<label>USDC: </label><span>{{boot.formatEther(boot.adminFeeIncomeUsdc,'usdc')}} USDC</span>
+	</p>
+	<p *ngIf="boot.isPoolOwner">
+		<button name="btnWithdrawAdminFee" (click)="withdrawAdminFee()">提取手续费收入</button>
+	</p>
+
+</section>
+<section *ngIf="boot.accounts&&boot.accounts.length>0">
+	<h1>Minter: <a href="{{getExplorerAddressURL(this.boot.minterContract.address)}}"
+			target="_blank">{{this.boot.minterContract.address}}</a> </h1>
+	<h2>Owner: </h2>
+	<p>
+		<label>Minter Owner: </label><span>{{minterOwner}}</span>
+	</p>
+	<p *ngIf="minterOwner.toLowerCase()!=boot.defaultOwner.address.toLowerCase() && boot.isMinterOwner">
+		<button name="btnMinterTransferOwner" (click)="transferMinterOwnerTo()">Transfer Owner To
+			{{boot.defaultOwner.address}}</button>
+	</p>
+	<p>
+		<label>Minter Dev: </label><span>{{minterDev}}</span>
+	</p>
+</section>
+<section *ngIf="boot.accounts&&boot.accounts.length>0">
+	<h1>Payment: <a href="{{getExplorerAddressURL(this.boot.paymentContract.address)}}"
+			target="_blank">{{this.boot.paymentContract.address}}</a> </h1>
+	<h2>Owner: </h2>
+	<p>
+		<label>Payment Owner: </label><span>{{paymentOwner}}</span>
+	</p>
+	<p>
+		<label>Payment Dev: </label><span>{{paymentDev}}</span>
+	</p>
+</section>
+<section *ngIf="boot.accounts&&boot.accounts.length>0">
+	<h1>Liquidity: <a href="{{getExplorerAddressURL(this.boot.liquidityContract.address)}}"
+			target="_blank">{{this.boot.liquidityContract.address}}</a> </h1>
+	<h2>Owner: </h2>
+	<p>
+		<label>Liquidity Owner: </label><span>{{liquidityOwner}}</span>
+	</p>
+</section>
+<section *ngIf="boot.accounts&&boot.accounts.length>0">
+	<h1>KST: <a href="{{getExplorerAddressURL(this.boot.cstContract.address)}}"
+			target="_blank">{{this.boot.cstContract.address}}</a> </h1>
+	<h2>Owner: </h2>
+	<p>
+		<label>KST Owner: </label><span>{{cstOwner}}</span>
+	</p>
+	<p>
+		<label>Total Supply: </label><span>{{boot.cstTotalSupply}}</span>
+	</p>
+</section>

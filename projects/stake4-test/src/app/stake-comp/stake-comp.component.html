@@ -1,0 +1,75 @@
+<!-- stake -->
+<div class="stake-box" [ngStyle]="{display:hidden?'none':'flex'}">
+    <div class="title">
+        <div class="box"></div>
+        <div class="text">{{boot.tokenSymbol}}</div>
+        <div style="color: #9E9EA1;font-size: 12px;margin-left: 8px;margin-top: 4px;">
+            {{"Balance"|translate}}: {{boot.balance.tokenBalance.toFormat(4, 1)}}</div>
+    </div>
+    <div class="pand">
+        <!--        <div class="pand-top">-->
+        <!--            <div class="left">-->
+        <!--                {{boot.tokenSymbol}}-->
+        <!--            </div>-->
+        <!--            <div class="right">-->
+        <!--                {{"Balance"|translate}}: {{boot.balance.tokenBalance.toFormat(4, 1)}}-->
+        <!--            </div>-->
+        <!--        </div>-->
+        <div class="pand-top-box">
+            <div class="pand-top-box-content">
+                <div class="left">
+                    {{boot.liquiditySymbol}}
+                </div>
+                <div class="right">
+                    {{"Balance"|translate}}: {{boot.balance.lp.toFormat(4, 1)}}
+                </div>
+            </div>
+            <div class="pand-bottom">
+                <input type="number" style="width: 25%" class="num" name="depositPercent" [ngModel]="depositPercent"
+                       (ngModelChange)="depositPercentChange($event)" onInput="if(value>100)value=100"
+                       (keypress)="keypressFn($event)"><span style="font-size:22px;">%</span>
+                <div class="text" *ngIf="needApproveLP&&(loadStatus===0||loadStatus===2)"
+                     [ngClass]="{blue:needApproveLP&&(loadStatus===0||loadStatus===2)}"
+                     (click)="approveLP()">
+                    {{"Approve" | translate}}
+                </div>
+                <div class="text" [ngClass]="{blue:!needApproveLP&&(loadStatus===0||loadStatus===2)}"
+                     (click)="depositLP()">
+                    {{"Deposit" | translate}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="pand">
+        <div class="pand-top-box">
+            <div class="pand-top-box-content">
+                <div class="left">
+                    {{boot.liquiditySymbol}}
+                </div>
+                <div class="right">
+                    {{"Staking" | translate}}: {{boot.balance.stakingLP.toFixed(4, 1)}}
+                </div>
+            </div>
+            <div class="pand-bottom">
+                <input type="number" class="num" name="withdrawLPPercent" [ngModel]="withdrawLPPercent"
+                       (ngModelChange)="withdrawLPPercentChange($event)" onInput="if(value>100)value=100"
+                       (keypress)="keypressFn($event)"><span style="font-size:22px;">%</span>
+                <div class="text" [ngClass]="{blue:loadStatus===0||loadStatus===2}"
+                     (click)="withdrawLP()">{{"Withdraw" |translate}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="stake-btn">
+        <div class="left" style="font-size: 12px;">
+            {{boot.balance.pendingToken.toFixed(4, 1)}}
+            <span>KST {{"Reward" | translate}}({{"Estimated" | translate}})</span>
+        </div>
+        <div [class]="isDisabled?'right btn-disabled':'right'" *ngIf="boot.accounts.length>0" (click)="getPending()">
+            {{"Claim" | translate}}
+        </div>
+        <div class="right" *ngIf="boot.accounts.length==0" (click)="connectWallet()">
+            {{"Connect to a Wallet"|translate}}
+        </div>
+    </div>
+</div>

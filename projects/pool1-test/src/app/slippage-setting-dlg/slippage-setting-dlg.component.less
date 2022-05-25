@@ -1,0 +1,265 @@
+.dialog-setting {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.39);
+
+  .center {
+    opacity: 1;
+    transition: 0.2s;
+    width: 280px;
+    min-height: 200px;
+    padding: 30px 30px;
+    background: RGBA(25, 25, 26, 0.95);
+    border-radius: 12px;
+    position: relative;
+    border: 2px solid rgba(255, 255, 255, 0.06);
+
+    .title {
+      height: 30px;
+      line-height: 30px;
+      margin-bottom: 30px;
+    }
+
+    .center-box {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 57px;
+
+      .left-box {
+
+        .left-box-one {
+          height: 52px;
+          border-radius: 4px;
+          border: 1px solid #2D2F39;
+          display: flex;
+          align-items: center;
+
+          > div {
+            width: 92px;
+            height: 52px;
+            border-radius: 4px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 16px;
+            color: #BEBEBE;
+            cursor: pointer;
+
+            .span-box {
+              position: relative;
+              width: 100%;
+              height: 100%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+
+              span {
+                z-index: 99;
+              }
+            }
+          }
+
+          .activeS {
+            background: #16A16A;
+            transition: 0.5s;
+            color: #FFFFFF;
+            position: relative;
+
+            b {
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 48px;
+              background: rgba(45, 47, 57, 0.38);
+            }
+          }
+        }
+      }
+
+      .right-box {
+        .right-box-one {
+          height: 52px;
+          background: #17191E;
+          border-radius: 14px;
+          display: flex;
+          align-items: center;
+          padding: 0 16px;
+
+          input {
+            width: 115px;
+            font-size: 14px;
+            color: #FFFFFF;
+
+            &:focus {
+              color: #FFFFFF;
+            }
+          }
+        }
+      }
+    }
+
+    .bottom-btn {
+      display: flex;
+      justify-content: center;
+
+      > div {
+        width: 80%;
+        height: 49px;
+        background: #16A16A;
+        border-radius: 14px;
+        font-size: 18px;
+        font-weight: 600;
+        color: #FFFFFF;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .yesBtn {
+        background: #16A16A;
+      }
+
+      .noBtn {
+        background: #2D2F39;
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  @paddingLeft: 86px;
+
+  .dialog-setting {
+    .center {
+      width: 504px;
+      max-height: 297px;
+      padding: 30px 36px;
+      border-radius: 21px;
+      box-sizing: border-box;
+
+      .title {
+        height: 32px;
+        font-size: 20px;
+        line-height: 32px;
+        margin-bottom: 20px;
+      }
+
+      .center-box {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 57px;
+
+        .left-box {
+
+          .left-box-one {
+            height: 52px;
+            border-radius: 4px;
+            border: 1px solid #2D2F39;
+            display: flex;
+            align-items: center;
+
+            > div {
+              width: 144px;
+              height: 52px;
+              border-radius: 4px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              font-size: 16px;
+              color: #BEBEBE;
+              cursor: pointer;
+
+              .span-box {
+                position: relative;
+                width: 100%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                span {
+                  z-index: 99;
+                }
+              }
+            }
+
+            .activeS {
+              background: #16A16A;
+              transition: 0.5s;
+              color: #FFFFFF;
+              position: relative;
+
+              b {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 48px;
+                background: rgba(45, 47, 57, 0.38);
+              }
+            }
+          }
+        }
+
+        .right-box {
+          .right-box-one {
+            height: 52px;
+            background: #17191E;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            padding: 0 16px;
+
+            input {
+              width: 115px;
+              font-size: 14px;
+              color: #FFFFFF;
+
+              &:focus {
+                color: #FFFFFF;
+              }
+            }
+          }
+        }
+      }
+
+      .bottom-btn {
+        display: flex;
+        justify-content: center;
+
+        > div {
+          width: 80%;
+          height: 49px;
+          background: #16A16A;
+          border-radius: 14px;
+          font-size: 18px;
+          font-weight: 600;
+          color: #FFFFFF;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .yesBtn {
+          background: #16A16A;
+        }
+
+        .noBtn {
+          background: #2D2F39;
+        }
+      }
+
+    }
+  }
+
+}

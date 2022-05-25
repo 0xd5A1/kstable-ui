@@ -1,0 +1,47 @@
+<!-- manage -->
+<div class="manage-box" [ngStyle]="{display:hidden?'none':'flex'}">
+    <div class="title" style="justify-content: space-between;">
+        <div class="left">
+            {{boot.balance.lp.toFixed(4,1)}}
+            <span>{{boot.liquiditySymbol}}</span>
+        </div>
+        <div class="right" style="width: 21%;">
+            <input type="number" class="num" name="redeemPercent" [ngModel]="redeemPercent"
+                (ngModelChange)="redeemPercentChange($event)" onInput="if(value>99.9999)value=99.9999">%
+        </div>
+    </div>
+    <div class="box-cont" *ngFor="let coin of boot.coins;let i=index">
+        <div class="left">
+            <input type="number" class="num" name="{{coin.symbol}}Amt" [(ngModel)]="amts[i]" readonly>
+        </div>
+        <div class="right">
+            <!-- <div class="approve">
+                <div class="text">
+                    Approve
+                </div>
+            </div> -->
+            <div class="line">
+                <div class="line-cont"></div>
+            </div>
+            <div class="coin">
+                <div class="img">
+                    <img src="assets/static/img/coins/{{boot.poolId}}-c{{i}}.png" alt="">
+                </div>
+                <div class="name">{{coin.symbol}}</div>
+            </div>
+        </div>
+    </div>
+    <div class="onoff">
+        <!-- <div class="text">Redeem to all coins</div> -->
+        <!-- <div class="bg-box"> -->
+        <!-- <div class="bg"></div> -->
+        <!-- <div class="box"></div> -->
+        <!-- </div> -->
+    </div>
+    <div [ngClass]="{btn:status!==1,'btn-disabled':status===1}" *ngIf="boot.accounts.length>0" (click)="redeemCoin()">
+        {{"Withdraw Liquidity"|translate}}
+    </div>
+    <div class="btn" *ngIf="boot.accounts.length==0" (click)="connectWallet()">
+        {{"Connect to a Wallet"|translate}}
+    </div>
+</div>

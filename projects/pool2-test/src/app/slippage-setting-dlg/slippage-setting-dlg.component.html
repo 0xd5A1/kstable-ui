@@ -1,0 +1,23 @@
+<div class="dialog-setting" [ngStyle]="{display:hidden?'none':''}" (click)="close()">
+    <div class="center backdrop-filter" [ngStyle]="{opacity:hidden?0:1}" (click)="$event.stopPropagation()">
+        <div class="title">{{"Slippage Setting"|translate}}</div>
+        <div class="center-box">
+            <div class="left-box">
+                <div class="left-box-one">
+                    <div *ngFor="let item of numList;let i=index;" [ngClass]="{'activeS':active === item.num}"
+                         (click)="selectNumFn(item.num)">
+                        <div class="span-box">
+                            <span> {{item.num}}%</span>
+                            <b></b>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="bottom-btn">
+            <div class="btn yesBtn" (click)="confirmSlippage()">{{'Confirm' | translate}}</div>
+<!--            <div class="btn noBtn" (click)="close()">{{'No' | translate}}</div>-->
+        </div>
+    </div>
+</div>

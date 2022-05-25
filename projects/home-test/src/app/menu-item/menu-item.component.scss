@@ -1,0 +1,48 @@
+li {
+    position: relative;
+    height: 35px;
+    line-height: 35px;
+}
+
+li .title {
+    position: relative;
+    color: #6B7595;
+    font-size: 15px;
+    transition: 0.5s;
+    z-index: 2;
+
+    a {
+        color: #6B7595;
+        text-decoration: none;
+    }
+}
+
+li .title.hover {
+    a:hover {
+        color: #fff;
+    }
+
+    a {
+        color: #fff;
+
+    }
+
+    color: #fff;
+    font-size: 20px;
+}
+
+li .shadow {
+    display: block;
+    position: absolute;
+    top: 0;
+    color: #6B7595;
+    font-size: 15px;
+    transition: 0.5s;
+    z-index: 1;
+}
+
+li .shadow.hover {
+    top: 10px;
+    color: rgba(255, 255, 255, 0.08);
+    font-size: 28px;
+}

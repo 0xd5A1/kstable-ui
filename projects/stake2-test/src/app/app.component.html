@@ -1,0 +1,76 @@
+<div class="top " [ngClass]="{'backdrop-filter':!isAndroid}">
+    <div class="logo">
+        <a href="/">
+            <img src="assets/static/img/KSTLOGO.png" alt="">
+        </a>
+    </div>
+</div>
+<div class="contant" [ngClass]="{open:menuOpen}">
+    <lib-header #header></lib-header>
+    <div class="contant-top">
+        <div class="connect" *ngIf="boot.accounts.length===0;else connected" (click)="chooseWallet()">
+            <div class="center">
+                <div class="img">
+                    <img src="assets/static/img/link-n.png" alt="">
+                </div>
+                <div class="line">
+                    <div class="line-cont"></div>
+                </div>
+                <div class="text">Connect Wallet</div>
+            </div>
+        </div>
+        <ng-template #connected>
+            <div class="connect" (click)="chooseWallet()">
+                <div class="center">
+                    <div class="img">
+                        <!-- todo: use wallet icon -->
+                        <img src="assets/static/img/link.png" alt="">
+                    </div>
+                    <div class="line">
+                        <div class="line-cont"></div>
+                    </div>
+                    <div class="text" style="width:70px;color: #16A16A;">{{addressLinkFn(boot.accounts[0])}}</div>
+                </div>
+            </div>
+        </ng-template>
+    </div>
+    <div class="contant-box">
+        <div class="tabs">
+            <ul #tabsUl>
+                <li class="stake " [ngClass]="{active:curTab===3}" (click)="changeTab(3)">
+                    <div class="tab-name">{{"Stake" | translate}} {{boot.liquiditySymbol}} <span style="color: #9E9EA1;font-size: 12px;margin-left: 8px;margin-top: 4px;">{{"To Earn" | translate}} KST</span></div>
+                    <div class="bg" [ngStyle]="{display:isMobile?'':'none'}"></div>
+                </li>
+                <div class="tabs-bg" [ngStyle]="{display:!isMobile?'':'none'}" #tabsBg></div>
+            </ul>
+        </div>
+        <div class="cont">
+            <div class="main">
+                <div class="boxs">
+                    <div class="box">
+                        <app-stake-comp *ngIf="curTab===3" [hidden]="curTab===3?false:true"
+                            (installWallet)="installWltDlg.open()" (chooseWallet)="cwDlg.open()" (chooseWallet)="cwDlg.open()" (loaded)="onLoaded()" (loading)="onLoading()"></app-stake-comp>
+                        <!-- 其他盒子 -->
+                        <!-- <app-user-info></app-user-info> -->
+                        <app-reward-info></app-reward-info>
+                        <!-- <app-pool-info></app-pool-info> -->
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <lib-left-menu [activeIndex]="5" (menuOpen)="menuOpenFn($event)"></lib-left-menu>
+    <div class="bg-box-1">
+        <div class="bg-box-cont"></div>
+    </div>
+    <div class="bg-box-2">
+        <div class="bg-box-cont"></div>
+    </div>
+    <div class="bg-box-3">
+
+    </div>
+</div>
+<app-choose-wallet-dlg #cwDlg></app-choose-wallet-dlg>
+<app-install-wallet-dlg #installWltDlg></app-install-wallet-dlg>

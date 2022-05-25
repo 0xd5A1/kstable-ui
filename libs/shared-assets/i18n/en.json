@@ -1,0 +1,22 @@
+{
+    "riskWarning": "KStable is in beta. Proceed at your own risk!",
+    "swapWarning": "This pair currently has a price slippage of approximately {{slippage}}%.Are you sure you want to continue？",
+    "addLPWarning_1": "This pool's liquidity currently has a price slippage of approximately {{slippage}}%.Are you sure you want to continue？",
+    "addLPWarning": "While this pool is made up of stablecoins, adding liquidity still incurs the risk of impermanent loss, should any of the pool's currencies' prices shift. Press 'continue' if you understand the risks involved with becoming a liquidity provider for an automated market maker (AMM)?",
+    "redeemWarning": "The Slippage is {{slippage}}%. Are you sure to do this？",
+    "Warning": "Heads up!",
+    "YES": "Continue",
+    "NO": "Cancel",
+    "Warning_1": "Warning",
+    "Warning_2": "Transaction failed",
+    "vpWarning": "Price of share over {{vpDiff}}%. High risk to add liquidity！",
+    "approve_label": "Approve {{symbol}} Amount",
+    "infinite_approval": "Infinite Approval",
+    "exchange_exception": "potential reasons may include: 1)insufficient liquidity 2) contract execution error 3) network congestion 4) insufficient gas fee. Please try again later.",
+    "redeem_ImBalance_exception": "You may not have enough liquidity({{symbol}}) or redeem the desired amount.",
+    "redeem_allcoin_exception": "You may not have enough liquidity({{symbol}}) or redeem the desired amount.",
+    "redeem_onecoin_exception": "You may not have enough liquidity({{symbol}}) or redeem the desired amount.",
+    "addliquidity_exception": "Your balance may be too low or you may not have pre-approved the funds.",
+    "enter_percentage":"Please enter a number",
+    "payment_claim_tip":"Tip: It is recommended that you withdraw the payment reward as soon as possible. Your reward balance may decrease with more participating users."
+}

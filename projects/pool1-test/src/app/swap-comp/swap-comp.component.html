@@ -1,0 +1,92 @@
+<!-- swap -->
+<div class="swap-box" [ngStyle]="{display:hidden?'none':'flex'}">
+    <div class="box-cont">
+        <div class="left">
+            <div class="box-top">{{"From" | translate}}</div>
+            <input type="number" class="num" [ngModel]="amt" (ngModelChange)="amtChanged($event)">
+        </div>
+        <div class="right">
+            <div class="balance">
+                <div class="text">
+                    {{"Balance"|translate}}: {{boot.balance.coinsBalance[left].toFormat(4, 1)}}
+                </div>
+                <div class="balance-bottom">
+                    <div class="bottom-box blue" (click)="maxAmt()"
+                         *ngIf="!isApproveEnabled()">{{"MAX" | translate}}</div>
+                    <div class="bottom-box disabled-all" *ngIf="isApproveEnabled()">{{"MAX" | translate}}</div>
+                    &nbsp;
+                    <div class="bottom-box blue" *ngIf="isApproveEnabled()"
+                         (click)="approve()">{{"Approve" | translate}}</div>
+                </div>
+            </div>
+            <div class="line">
+                <div class="l"></div>
+            </div>
+            <div class="coin" (click)="openCoinLeftDlg()">
+                <div class="img">
+                    <img src="assets/static/img/coins/{{boot.poolId}}-c{{left}}.png" alt="">
+                </div>
+                <div class="name">{{boot.coins[left].symbol}}</div>
+            </div>
+            <div class="triangle">
+                <img src="assets/static/img/triangle.png" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="to">
+        <img src="assets/static/img/exchange.png" alt="">
+    </div>
+    <div class="box-cont">
+        <div class="left">
+            <div class="box-top">{{"To (Estimated)" | translate}}</div>
+            <input type="number" class="num" name="minAmt" [(ngModel)]="minAmt" readonly>
+        </div>
+        <div class="right">
+            <div class="balance">
+                <div class="text">
+                    {{"Balance"|translate}}: {{boot.balance.coinsBalance[right].toFormat(4, 1)}}
+                </div>
+                <div class="balance-bottom">
+                    <!-- <div class="bottom-box">Approve</div> -->
+                </div>
+            </div>
+            <div class="line">
+                <div class="l"></div>
+            </div>
+            <div class="coin" (click)="openCoinRightDlg()">
+                <div class="img">
+                    <img src="assets/static/img/coins/{{boot.poolId}}-c{{right}}.png" alt="">
+                </div>
+                <div class="name">{{boot.coins[right].symbol}}</div>
+            </div>
+            <div class="triangle">
+                <img src="assets/static/img/triangle.png" alt="">
+            </div>
+        </div>
+    </div>
+    <div [ngClass]="{'btn-disabled':!isExchangeEnabled(),'btn':isExchangeEnabled()}" *ngIf="boot.accounts.length>0"
+         (click)="exchange()">
+        {{"Exchange"|translate}}
+    </div>
+    <div class="btn" *ngIf="boot.accounts.length==0" (click)="connectWallet()">
+        {{"Connect to a Wallet"|translate}}
+    </div>
+    <div class="fee feeSetting">
+        <span class="Slippage" (click)="slippageFn()">
+            <svg t="1619522395370" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                 p-id="2080" width="128" height="128"><path
+                    d="M880 112h-736c-17.696 0-32 14.304-32 32v736c0 17.696 14.304 32 32 32h736c17.696 0 32-14.304 32-32v-736c0-17.696-14.304-32-32-32z m-40 728H184V184h656v656z"
+                    fill="#115037" p-id="2081"></path><path
+                    d="M358.816 480.8c-6.464 0.8-12.768 2.24-18.816 4.192V264a8 8 0 0 1 8-8h48a8 8 0 0 1 8 8v220.992a104 104 0 0 1-18.816 202.176l-6.528 0.64c8.8-0.544 17.28-2.176 25.344-4.8v76.992a8 8 0 0 1-8 8h-48a8 8 0 0 1-8-8v-76.992a104 104 0 0 1 25.344-202.784z m13.92 67.328l-4.032 0.064-3.392 0.48-3.616 0.832-3.392 1.152-3.616 1.728-4.16 2.72-2.56 1.984-3.36 3.36-2.304 3.136-1.216 1.824-0.96 1.92a36.16 36.16 0 0 0-1.76 29.504l2.208 4.768 0.512 0.992 1.984 3.04 1.504 1.856 3.424 3.456 3.648 2.784 2.112 1.344 2.144 1.152 2.4 1.12 2.048 0.736 2.464 0.704 1.376 0.32c0.704 0.192 1.504 0.32 2.208 0.384l0.256 0.096 3.808 0.32 4.032-0.096 1.792-0.224 0.256-0.064 1.344-0.192 3.616-0.832 3.392-1.152 3.616-1.76 1.888-1.088 4-2.88 1.6-1.408 2.592-2.656 3.616-5.056 0.992-1.792a36.16 36.16 0 0 0 0-33.408l-1.088-1.92-1.984-3.008-1.504-1.856-3.424-3.456-3.648-2.784-0.768-0.48-0.384-0.32-3.104-1.696-2.4-1.12-2.048-0.736-2.464-0.736-1.376-0.288c-0.704-0.192-1.504-0.32-2.208-0.384l-0.256-0.096-3.808-0.32z"
+                    fill="#16A16A" p-id="2082"></path><path
+                    d="M638.816 336.8c-6.496 0.832-12.768 2.24-18.816 4.192V264a8 8 0 0 1 8-8h48a8 8 0 0 1 8 8v76.992a104 104 0 0 1-18.816 202.176l-6.528 0.64c8.8-0.544 17.28-2.176 25.344-4.8v220.992a8 8 0 0 1-8 8h-48a8 8 0 0 1-8-8v-220.992a104 104 0 0 1 25.344-202.784z m13.92 67.328l-4.032 0.064-1.792 0.192-0.256 0.096-1.344 0.192-3.904 0.928-3.104 1.056-3.616 1.728-1.888 1.12-4 2.88-1.6 1.408-2.592 2.656-2.304 3.168-1.216 1.792-0.96 1.92a36.16 36.16 0 0 0-1.76 29.504l2.208 4.768 0.512 0.992 1.984 3.04 1.504 1.856 3.424 3.456 3.648 2.784 0.736 0.48 0.416 0.32 3.104 1.696 2.4 1.12 2.048 0.736 2.464 0.736 1.376 0.288c0.704 0.192 1.504 0.32 2.208 0.384l0.256 0.096 3.808 0.32 4.032-0.096 3.392-0.48 3.904-0.928 3.104-1.056 3.616-1.728 4.16-2.72 2.56-1.984 3.36-3.36 2.304-3.168 1.216-1.792 0.96-1.92a36.16 36.16 0 0 0 1.76-29.504l-2.208-4.768-0.512-0.992-1.984-3.04-1.504-1.856-3.424-3.456-3.648-2.784-2.112-1.344-2.144-1.152-2.4-1.12-2.048-0.736-2.464-0.736-1.376-0.288c-0.704-0.192-1.504-0.32-2.208-0.384l-0.256-0.096-3.808-0.32z"
+                    fill="#115037" p-id="2083"></path></svg>
+            <div>{{slippageNum}}%</div>
+            {{"Slippage Setting"|translate}}
+        </span>
+        <span class="feeSpan">{{"Fee"|translate}}: <span>{{getFee()}}%</span></span>
+    </div>
+</div>
+<app-coins-dlg #coinsDlgLeft (coinSelected)="onLeftCoinSelected($event)"></app-coins-dlg>
+<app-coins-dlg #coinsDlgRight (coinSelected)="onRightCoinSelected($event)"></app-coins-dlg>
+<app-slippage-setting-dlg #settingDlg [slippageNum]="slippageNum" (taskData)="onTaskData($event)"></app-slippage-setting-dlg>

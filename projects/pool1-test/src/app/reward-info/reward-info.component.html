@@ -1,0 +1,49 @@
+<div class="other-box">
+    <div class="title">
+        <div class="box"></div>
+        <div class="text">{{"Pool's Reward Info" | translate}}</div>
+
+    </div>
+    <div class="list">
+        <div class="left">{{"Allocation Percent" | translate}}:</div>
+        <div class="right">
+            <div class="num">{{allocationPercent().toFixed(2,1)}}%</div>
+        </div>
+    </div>
+    <div class="list">
+        <div class="left">{{"Total Volume" | translate}}:</div>
+        <div class="right">
+            <div class="num">{{boot.poolInfo.volume.toFormat(4,1)}}</div>
+        </div>
+    </div>
+    <div class="list">
+        <div class="left">{{boot.tokenSymbol}} {{"Total Supply" | translate}}:</div>
+        <div class="right">
+            <div class="num">{{boot.poolInfo.tokenTotalSupply.toFormat(4,1)}}</div>
+        </div>
+    </div>
+    <div class="list">
+        <div class="left">{{"Pool's" | translate}} APY:</div>
+        <div class="right">
+            <div class="num">{{getAPY()}}%</div>
+        </div>
+    </div>
+    <div class="list">
+        <div class="left">{{"Start Block" | translate}}:</div>
+        <div class="right">
+            <div class="num">{{boot.poolInfo.startBlock.toFormat(0,1)}}</div>
+        </div>
+    </div>
+    <div class="list">
+        <div class="left">{{"Bonus End Block" | translate}}(2x):</div>
+        <div class="right">
+            <div class="num">{{boot.poolInfo.bonusEndBlock.toFormat(0,1)}}</div>
+        </div>
+    </div>
+    <div class="list">
+        <div class="left">{{"Token Per Block" | translate}}:</div>
+        <div class="right">
+            <div class="num">{{boot.poolInfo.tokenPerBlock.toFormat(0,1)}} {{boot.tokenSymbol}}</div>
+        </div>
+    </div>
+</div>

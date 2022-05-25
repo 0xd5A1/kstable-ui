@@ -1,0 +1,125 @@
+/*
+  This is a "Solution Style" tsconfig.json file, and is used by editors and TypeScript’s language server to improve development experience.
+  It is not intended to be used to perform a compilation.
+
+  To learn more about this file see: https://angular.io/config/solution-tsconfig.
+*/
+{
+    "files": [],
+    "references": [
+        {
+            "path": "./projects/ssp-app/tsconfig.app.json"
+        },
+        {
+            "path": "./projects/ssp-app/tsconfig.spec.json"
+        },
+        {
+            "path": "./projects/ssp-home/tsconfig.app.json"
+        },
+        {
+            "path": "./projects/ssp-home/tsconfig.spec.json"
+        },
+    {
+      "path": "./projects/app-lib/tsconfig.lib.json"
+    },
+    {
+      "path": "./projects/app-lib/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/ssp-stake/tsconfig.app.json"
+    },
+    {
+      "path": "./projects/ssp-stake/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/home-main/tsconfig.app.json"
+    },
+    {
+      "path": "./projects/home-main/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/home-test/tsconfig.app.json"
+    },
+    {
+      "path": "./projects/home-test/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/pool1-test/tsconfig.app.json"
+    },
+    {
+      "path": "./projects/pool1-test/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/pool1-main/tsconfig.app.json"
+    },
+    {
+      "path": "./projects/pool1-main/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/pool2-main/tsconfig.app.json"
+    },
+    {
+      "path": "./projects/pool2-main/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/pool2-test/tsconfig.app.json"
+    },
+    {
+      "path": "./projects/pool2-test/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/pool1-stake/tsconfig.app.json"
+    },
+    {
+      "path": "./projects/pool1-stake/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/stake1-main/tsconfig.app.json"
+    },
+    {
+      "path": "./projects/stake1-main/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/stake1-test/tsconfig.app.json"
+    },
+    {
+      "path": "./projects/stake1-test/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/payment-test/tsconfig.app.json"
+    },
+    {
+      "path": "./projects/payment-test/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/payment-main/tsconfig.app.json"
+    },
+    {
+      "path": "./projects/payment-main/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/pool3-test/tsconfig.app.json"
+    },
+    {
+      "path": "./projects/pool3-test/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/stake3-test/tsconfig.app.json"
+    },
+    {
+      "path": "./projects/stake3-test/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/stake4-test/tsconfig.app.json"
+    },
+    {
+      "path": "./projects/stake4-test/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/refund/tsconfig.app.json"
+    },
+    {
+      "path": "./projects/refund/tsconfig.spec.json"
+    }
+    ]
+}

@@ -1,0 +1,1 @@
+ng b --project=pool2-test --base-href=/pool2/ --outputPath=dist/pool2-prod --aot --prod

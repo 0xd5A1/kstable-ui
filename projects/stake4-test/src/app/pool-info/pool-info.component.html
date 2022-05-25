@@ -1,0 +1,42 @@
+<div class="other-box">
+    <div class="title">
+        <div class="box"></div>
+        <div class="text">{{"Liquidity"|translate}}</div>
+    </div>
+    <div class="list" *ngFor="let coin of boot.coins;let i=index">
+        <div class="left">{{coin.symbol}}:</div>
+        <div class="right">
+            <div class="num gray">{{boot.poolInfo.coinsRealBalance[i].toFormat(4)}}</div>
+            <div class="num">{{percent(i).toFixed(2)}}%</div>
+        </div>
+    </div>
+    <div class="list">
+        <div class="left"></div>
+        <div class="right">
+            <div class="num gray"></div>
+            <div class="num"></div>
+        </div>
+    </div>
+    <div class="list">
+        <div class="line">
+            <div class="line-box"></div>
+        </div>
+        <!-- <div class="left"></div>
+        <div class="right">
+            <div class="num gray"></div>
+            <div class="num"></div>
+        </div> -->
+    </div>
+    <div class="list">
+        <div class="left">{{getCoinsStr()}}</div>
+        <div class="right">
+            <div class="num">{{getTotal().toFormat(4)}}</div>
+        </div>
+    </div>
+    <div class="list">
+        <div class="left">{{"Virtual Price"|translate}}</div>
+        <div class="right">
+            <div class="num">{{boot.poolInfo.virtualPrice.toFixed(4)}}</div>
+        </div>
+    </div>
+</div>

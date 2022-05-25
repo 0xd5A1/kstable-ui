@@ -1,0 +1,45 @@
+{
+	"compileOnSave": false,
+	"compilerOptions": {
+		"baseUrl": "./",
+		"outDir": "./dist/out-tsc",
+		"sourceMap": true,
+		"declaration": false,
+		"downlevelIteration": true,
+		"experimentalDecorators": true,
+		"moduleResolution": "node",
+		"importHelpers": true,
+		"target": "es2015",
+		"module": "es2020",
+		"lib": [
+			"es2018",
+			"dom"
+		],
+		"paths": {
+			"app-lib": [
+				"dist/app-lib/app-lib",
+				"dist/app-lib"
+			],
+			"crypto": [
+				"node_modules/crypto-browserify"
+			],
+			"assert": [
+				"node_modules/assert/"
+			],
+			"stream": [
+				"node_modules/stream-browserify"
+			],
+			"http": [
+				"node_modules/stream-http"
+			],
+			"https": [
+				"node_modules/https-browserify"
+			],
+			"os": [
+				"node_modules/os-browserify/browser"
+			]
+		},
+		"resolveJsonModule": true,
+		"esModuleInterop": true
+	}
+}
