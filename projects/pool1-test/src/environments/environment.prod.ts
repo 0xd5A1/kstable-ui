@@ -1,26 +1,26 @@
 export const environment = {
 	production: true,
 	poolId: "p1",
-	liquiditySymbol: "CSLP-01",
+	liquiditySymbol: "KSLP-01",
 	tokenSymbol: "KST",
 	virtualPriceDiff: 0.006,
-	coins: [{ symbol: 'CUSD', decimals: 18 }, { symbol: 'USDT', decimals: 6 }, { symbol: 'USDC', decimals: 6 }],
+	coins: [{ symbol: 'XUSD', decimals: 18 }, { symbol: 'USDT', decimals: 18 }, { symbol: 'USDC', decimals: 18 }],
 	rpc: {
-		42220: 'https://forno.celo.org'
+		2222: 'https://evm.kava.io'
 	},
 	chains: {
-		42220: {
+		2222: {
 			enabled: true,
 			name: 'Mainnet',
 			contracts: {
 				proxy: {
-					address: "0x88BF45B1A80C24A409163709504fe81D37304c46"
+					address: "0x143Fd1e4552E41028302e6d63855E4719707d6A3"
 				},
 				pid: 0,
 				coins: [
-					'0x765DE816845861e75A25fCA122bb6898B8B1282a',
-					'0x88eeC49252c8cbc039DCdB394c0c2BA2f1637EA0',
-					'0xef4229c8c3250C675F21BCefa42f58EfbfF6002a',
+					'0xFF7115a700def81bCF928D9bBc747e3300e029af',
+					'0x03621d865a9F40e093618E451b10c0360cca111B',
+					'0x989E5940A0D05DEEa4ce19b03F2f02E9EAB5277C',
 				]
 			}
 		},

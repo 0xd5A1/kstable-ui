@@ -3,10 +3,10 @@ import { common } from 'libs/common/com.evn';
 export const environment = {
     production: false,
     poolId: "p2",
-    liquiditySymbol: "CSLP-02",
+    liquiditySymbol: "KSLP-02",
     tokenSymbol: "KST",
     virtualPriceDiff: 0.006,
-    coins: [{ symbol: 'tAUSD' }, { symbol: 'tCUSD' }, { symbol: 'tUSDT' }],
+    coins: [{ symbol: 'tAUSD' }, { symbol: 'tXUSD' }, { symbol: 'tUSDT' }],
     rpc: {
         56: "https://bsc-dataseed.binance.org/",
         97: 'https://data-seed-prebsc-1-s1.binance.org:8545/',

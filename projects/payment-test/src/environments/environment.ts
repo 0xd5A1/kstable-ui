@@ -2,25 +2,23 @@ import { common } from 'libs/common/com.evn';
 export const environment = {
 	production: false,
 	poolId: 'pay',
-	paymentTokenSymbol: 'CSPT',
+	paymentTokenSymbol: 'KSPT',
 	tokenSymbol: 'KST',
 	virtualPriceDiff: 0.006,
-	coins: [{ symbol: 'CUSD', decimals: 18 }, { symbol: 'USDT', decimals: 6 }, { symbol: 'USDC', decimals: 6 }],
+	coins: [{ symbol: 'XUSD', decimals: 18 }, { symbol: 'USDT', decimals: 18 }, { symbol: 'USDC', decimals: 18 }],
 	rpc: {
-		56: 'https://bsc-dataseed.binance.org/',
-		97: 'https://data-seed-prebsc-1-s1.binance.org:8545/',
-		44787: 'https://alfajores-forno.celo-testnet.org'
+		2221: 'https://evm.evm-alpha.kava.io'
 	},
 	chains: {
-		44787: {
+		2221: {
 			enabled: true,
-			name: 'Testnet',
+			name: 'Mainnet',
 			contracts: {
 				proxy: {
-					address: common.proxy.address
+					address: '0xe864964E9A4A7a82da3a9FF1A6e112B03DFeebE8'
 				},
 				payment: {
-					address: common.payment.address
+					address: '0x8fDab72B930bc06F17b9C605137E9E079b2b4EBb'
 				}
 			}
 		},

@@ -1,10 +1,10 @@
 export const environment = {
     production: true,
     poolId: "p2",
-    liquiditySymbol: "CSLP-02",
+    liquiditySymbol: "KSLP-02",
     tokenSymbol: "KST",
     virtualPriceDiff: 0.006,
-    coins: [{ symbol: 'AUSD' }, { symbol: 'CUSD' }, { symbol: 'USDT' }],
+    coins: [{ symbol: 'AUSD' }, { symbol: 'XUSD' }, { symbol: 'USDT' }],
     rpc: {
         56: "https://bsc-dataseed.binance.org/",
         97: 'https://data-seed-prebsc-1-s1.binance.org:8545/'

@@ -1,31 +1,29 @@
 import { common } from 'libs/common/com.evn';
 export const environment = {
-    production: false,
-    poolId: "p1",
-    liquiditySymbol: "CSLP-01",
-    tokenSymbol: "KST",
-    virtualPriceDiff: 0.006,
-	coins: [{ symbol: 'CUSD', decimals: 18 }, { symbol: 'USDT', decimals: 6 }, { symbol: 'USDC', decimals: 6 }],
-    rpc: {
-        56: "https://bsc-dataseed.binance.org/",
-        97: 'https://data-seed-prebsc-1-s1.binance.org:8545/',
-		44787: 'https://alfajores-forno.celo-testnet.org'
-    },
-    chains: {
-        44787: {
-            enabled: true,
-            name: 'Testnet',
-            contracts: {
-                proxy: {
-                    address: common.proxy.address
-                },
-                pid: 0,
-                coins: [
-                    '0x765DE816845861e75A25fCA122bb6898B8B1282a',
-                    '0x88eeC49252c8cbc039DCdB394c0c2BA2f1637EA0',
-                    '0xef4229c8c3250C675F21BCefa42f58EfbfF6002a',
-                ]
-            }
-        }
-    },
+	production: false,
+	poolId: "p1",
+	liquiditySymbol: "KSLP-01",
+	tokenSymbol: "KST",
+	virtualPriceDiff: 0.006,
+	coins: [{ symbol: 'XUSD', decimals: 18 }, { symbol: 'USDT', decimals: 18 }, { symbol: 'USDC', decimals: 18 }],
+	rpc: {
+		2221: 'https://evm.evm-alpha.kava.io'
+	},
+	chains: {
+		2221: {
+			enabled: true,
+			name: 'Mainnet',
+			contracts: {
+				proxy: {
+					address: "0xe864964E9A4A7a82da3a9FF1A6e112B03DFeebE8"
+				},
+				pid: 0,
+				coins: [
+					'0x08682488BfFCb5976a8d36D69d31004e202c592A',
+					'0x26bC7B757E9fCB63dC7Dad302aE61415e5c3A0BB',
+					'0xd31Fc6B4840Eb2b8fe0cf148395E798b9D9Eb343',
+				]
+			}
+		},
+	},
 };

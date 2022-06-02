@@ -12,13 +12,13 @@ export const environment = {
 			target: '_self'
 		},
 		{
-			text: 'Pool  CUSD / USDT / USDC',
+			text: 'Pool  XUSD / USDT / USDC',
 			active: false,
 			url: '/pool1',
 			target: '_self'
 		},
 		{
-			text: 'Stake LP CUSD / USDT / USDC',
+			text: 'Stake LP XUSD / USDT / USDC',
 			active: false,
 			url: '/stake1',
 			target: '_self'
@@ -26,33 +26,33 @@ export const environment = {
 		{
 			text: 'Docs',
 			active: false,
-			url: 'https://docs.kstable.io,
+			url: 'https://docs.kstable.io',
 			target: '_blank'
 		}
 	],
 	rpc: {
-		url: 'https://alfajores-forno.celo-testnet.org'
-	},
-	pool1: {
-		address: '0x58236aFaF0E2eA107ceCe1e260fE3f0b2DD983A0',
+        url: 'https://evm.evm-alpha.kava.io'
+    },
+    pool1: {
+		address: '0xa8c1B794103019588Ee5770a07a71D5973eCC805',
 	},
 	liqudityFarmingProxy: {
-		address: '0x1417b04E2Ce9cF52ca9e007749e8E2D89209F30b'
+		address: '0xe864964E9A4A7a82da3a9FF1A6e112B03DFeebE8'
 	},
 	bstToken: {
-		address: '0x0e944385C537730410cd5f5975dEE0f3d6A88a76'
+		address: '0x2BF3416B1920948DEeed86262420798DfB1c7dd8'
 	},
 	paymentFarmingProxy: {
-		address: '0x1650d61B57943f0af725cB8275c0D9147366CB27'
+		address: '0x8fDab72B930bc06F17b9C605137E9E079b2b4EBb'
 	},
-	cusd: {
-		address: '0x765DE816845861e75A25fCA122bb6898B8B1282a'
+	xusd: {
+		address: '0x08682488BfFCb5976a8d36D69d31004e202c592A'
 	},
 	usdt: {
-		address: '0x88eeC49252c8cbc039DCdB394c0c2BA2f1637EA0'
+		address: '0x26bC7B757E9fCB63dC7Dad302aE61415e5c3A0BB'
 	},
 	usdc: {
-		address: '0xef4229c8c3250C675F21BCefa42f58EfbfF6002a'
+		address: '0xd31Fc6B4840Eb2b8fe0cf148395E798b9D9Eb343'
 	}
 };
 

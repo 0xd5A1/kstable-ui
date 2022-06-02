@@ -18,11 +18,11 @@ export class BootService {
 	liquidityFarmingProxyContract: ethers.Contract;
 	paymentFarmingProxyContract: ethers.Contract;
 	bstTokenContract: ethers.Contract;
-	cusdContract: ethers.Contract;
+	xusdContract: ethers.Contract;
 	usdtContract: ethers.Contract;
 	usdcContract: ethers.Contract;
 
-	coins = [{ symbol: 'CUSD', decimals: 18 }, { symbol: 'USDT', decimals: 6 }, { symbol: 'USDC', decimals: 6 }];
+	coins = [{ symbol: 'XUSD', decimals: 18 }, { symbol: 'USDT', decimals: 6 }, { symbol: 'USDC', decimals: 6 }];
 
 	constructor() {
 		this.provider = new ethers.providers.JsonRpcProvider(environment.rpc.url);
@@ -30,7 +30,7 @@ export class BootService {
 		this.liquidityFarmingProxyContract = new ethers.Contract(environment.liqudityFarmingProxy.address, LiquidityFarmingProxy.abi, this.provider);
 		this.paymentFarmingProxyContract = new ethers.Contract(environment.paymentFarmingProxy.address, PaymentFarmingProxy.abi, this.provider);
 		this.bstTokenContract = new ethers.Contract(environment.bstToken.address, KSTToken.abi, this.provider);
-		this.cusdContract = new ethers.Contract(environment.cusd.address, ERC20.abi, this.provider);
+		this.xusdContract = new ethers.Contract(environment.xusd.address, ERC20.abi, this.provider);
 		this.usdtContract = new ethers.Contract(environment.usdt.address, ERC20.abi, this.provider);
 		this.usdcContract = new ethers.Contract(environment.usdc.address, ERC20.abi, this.provider);
 	}
@@ -43,7 +43,7 @@ export class BootService {
 	}
 	getTvl(): Promise<BigNumber> {
 		let pArr = new Array();
-		pArr.push(this.cusdContract.balanceOf(environment.pool1.address));
+		pArr.push(this.xusdContract.balanceOf(environment.pool1.address));
 		pArr.push(this.usdtContract.balanceOf(environment.pool1.address));
 		pArr.push(this.usdcContract.balanceOf(environment.pool1.address));
 		return Promise.all(pArr).then(res => {

@@ -8,13 +8,13 @@ export const environment = {
             target: '_self'
         },
         {
-            text: 'Pool  CUSD / USDT / USDC',
+            text: 'Pool  XUSD / USDT / USDC',
             active: false,
             url: '/pool1',
             target: '_self'
         },
         {
-            text: 'Stake LP CUSD / USDT / USDC',
+            text: 'Stake LP XUSD / USDT / USDC',
             active: false,
             url: '/stake1',
             target: '_self'
@@ -27,27 +27,27 @@ export const environment = {
         }
     ],
     rpc: {
-        url: 'https://forno.celo.org'
+        url: 'https://evm.kava.io'
     },
     pool1: {
-		address: '0xBE3fd02D1b64c776BEAFB1438970757dCde63AAa',
+		address: '0xBaE4DD59f8B700146153479806037812742D3B4c',
 	},
 	liqudityFarmingProxy: {
-		address: '0x88BF45B1A80C24A409163709504fe81D37304c46'
+		address: '0x143Fd1e4552E41028302e6d63855E4719707d6A3'
 	},
 	bstToken: {
-		address: '0x3a0f2216C28F5f5c486aB09DCc2CA72A3dFADD88'
+		address: '0xb820592cBEd1663225201e313c94e13AC53A0Df4'
 	},
 	paymentFarmingProxy: {
-		address: '0x18e4e21a2c953f4095B1E20627D03dB587291e79'
+		address: '0x13113F038B761D580AE431Ed189a8a6303DcE27e'
 	},
-	cusd: {
-		address: '0x765DE816845861e75A25fCA122bb6898B8B1282a'
+	xusd: {
+		address: '0xFF7115a700def81bCF928D9bBc747e3300e029af'
 	},
 	usdt: {
-		address: '0x88eeC49252c8cbc039DCdB394c0c2BA2f1637EA0'
+		address: '0x03621d865a9F40e093618E451b10c0360cca111B'
 	},
 	usdc: {
-		address: '0xef4229c8c3250C675F21BCefa42f58EfbfF6002a'
+		address: '0x989E5940A0D05DEEa4ce19b03F2f02E9EAB5277C'
 	}
 };
